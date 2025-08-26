@@ -23,8 +23,25 @@ h4,
 h5 {
     letter-spacing: 0.5px;
     line-height: 1.2;
+    overflow-wrap: break-word;
 }
 
 p {
     max-width: 75ch;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
 }
