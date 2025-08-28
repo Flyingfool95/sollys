@@ -1,10 +1,11 @@
-import Logo from "../components/Logo.tsx";
+import Header from "../components/header/Header.tsx";
+import Dashboard from "../islands/Dashboard.tsx";
 
 export default function Home() {
     return (
         <div>
-            <h1>Welcome to Sollys</h1>
-            <Logo />
+            <Header />
+            <Dashboard />
         </div>
     );
 }

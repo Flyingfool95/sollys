@@ -1,0 +1,5 @@
+input[type="date"]{
+    border: none;
+    background-color: transparent;
+    color: var(--color-secondary);
+}

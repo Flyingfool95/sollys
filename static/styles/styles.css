@@ -15,6 +15,9 @@ body {
     min-height: 100dvh;
     padding: var(--spacing-md);
 
+    font-size: var(--font-size-sm);
+    color: var(--color-secondary);
+
     background: linear-gradient(var(--color-bg-top), var(--color-bg-bottom));
 }
 
