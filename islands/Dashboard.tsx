@@ -1,10 +1,11 @@
-import { dateFilter } from "./signals.ts";
+import { coordinates } from "./signals.ts";
 
 export default function Dashboard() {
     return (
         <div>
             <div>Dashboard</div>
-            <div>Current date filter: {dateFilter.value}</div>
+            Lat: {coordinates.value?.lat} <br />
+            Lon: {coordinates.value?.lng}
         </div>
     );
 }
