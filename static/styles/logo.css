@@ -1,0 +1,29 @@
+.logo {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    overflow: hidden;
+}
+
+.logo .bar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--color-bg-top);
+}
+
+.logo .bar:nth-child(1) {
+    bottom: 21px;
+}
+.logo .bar:nth-child(2) {
+    bottom: 15px;
+}
+.logo .bar:nth-child(3) {
+    bottom: 9px;
+}
+.logo .bar:nth-child(4) {
+    bottom: 3px;
+}

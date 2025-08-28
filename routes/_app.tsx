@@ -9,6 +9,7 @@ export default function App({ Component }: PageProps) {
                 <link rel="stylesheet" href="/fonts/fonts.css" />
                 <link rel="stylesheet" href="/styles/variables.css" />
                 <link rel="stylesheet" href="/styles/styles.css" />
+                <link rel="stylesheet" href="/styles/logo.css" />
             </head>
             <body>
                 <Component />

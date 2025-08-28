@@ -14,6 +14,8 @@ html {
 body {
     min-height: 100dvh;
     padding: var(--spacing-md);
+
+    background: linear-gradient(var(--color-bg-top), var(--color-bg-bottom));
 }
 
 h1,
