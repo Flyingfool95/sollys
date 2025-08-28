@@ -7,7 +7,8 @@ export default function App({ Component }: PageProps) {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <title>Sollys - Every day a little brighter</title>
                 <link rel="stylesheet" href="/fonts/fonts.css" />
-                <link rel="stylesheet" href="/styles.css" />
+                <link rel="stylesheet" href="/styles/variables.css" />
+                <link rel="stylesheet" href="/styles/styles.css" />
             </head>
             <body>
                 <Component />
