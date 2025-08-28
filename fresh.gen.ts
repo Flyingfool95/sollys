@@ -9,6 +9,7 @@ import * as $index from "./routes/index.tsx";
 import * as $login from "./routes/login.tsx";
 import * as $Dashboard from "./islands/Dashboard.tsx";
 import * as $MyDatePicker from "./islands/MyDatePicker.tsx";
+import * as $MyLocationPicker from "./islands/MyLocationPicker.tsx";
 import * as $signals from "./islands/signals.ts";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -23,6 +24,7 @@ const manifest = {
   islands: {
     "./islands/Dashboard.tsx": $Dashboard,
     "./islands/MyDatePicker.tsx": $MyDatePicker,
+    "./islands/MyLocationPicker.tsx": $MyLocationPicker,
     "./islands/signals.ts": $signals,
   },
   baseUrl: import.meta.url,
