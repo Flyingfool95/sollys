@@ -1,6 +1,6 @@
 .myDatePicker {
     position: absolute;
-    left: 0;
+    left: var(--spacing-md);
     top: 0;
     bottom: 0;
 
