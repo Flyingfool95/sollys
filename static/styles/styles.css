@@ -9,16 +9,24 @@ html {
     font-family: "QuickSand", sans-serif;
     letter-spacing: 1px;
     line-height: 1.6;
+    background: linear-gradient(var(--color-bg-top), var(--color-bg-bottom));
 }
 
 body {
     min-height: 100dvh;
-    padding: var(--spacing-md);
 
     font-size: var(--font-size-sm);
     color: var(--color-secondary);
+}
 
-    background: linear-gradient(var(--color-bg-top), var(--color-bg-bottom));
+main,
+header,
+footer {
+    padding: var(--spacing-md);
+}
+
+main > div {
+    margin: var(--spacing-xl) 0;
 }
 
 h1,
