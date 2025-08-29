@@ -9,6 +9,8 @@
     --color-primary-alt: #be9645;
     --color-secondary: #90aec4;
     --color-secondary-alt: #122e45;
+    --color-secondary-15: #90aec427;
+
     --color-bg-top: #0b2d48;
     --color-bg-bottom: #001a2d;
 
@@ -18,5 +20,4 @@
     --font-size-xl: 64px;
 
     --border-radius: 10px;
-    
 }
