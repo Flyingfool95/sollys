@@ -1,6 +1,7 @@
 import { useEffect } from "preact/hooks";
 import { signal } from "@preact/signals";
 import { coordinates } from "./signals.ts";
+import Spinner from "../components/spinner/Spinner.tsx";
 
 const city = signal<string | null>(null);
 
@@ -19,12 +20,12 @@ export default function MyLocationPicker() {
         );
     }, []);
 
-    if (!coordinates.value) {
-        return <div className="myLocationPicker">Loading location…</div>;
-    }
-
-    if (!city.value) {
-        return <div className="myLocationPicker">Resolving city…</div>;
+    if (!coordinates.value || !city.value) {
+        return (
+            <div className="myLocationPicker">
+                <Spinner />
+            </div>
+        );
     }
 
     return <div className="myLocationPicker">{city.value}</div>;
