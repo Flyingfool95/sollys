@@ -15,6 +15,7 @@ export default function App({ Component }: PageProps) {
                 <link rel="stylesheet" href="/styles/logo.css" />
                 <link rel="stylesheet" href="/styles/date-picker.css" />
                 <link rel="stylesheet" href="/styles/location-picker.css" />
+                <link rel="stylesheet" href="/styles/footer.css" />
             </head>
             <body>
                 <Component />
