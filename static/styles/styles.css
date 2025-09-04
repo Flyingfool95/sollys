@@ -69,3 +69,8 @@ button {
     color: var(--color-primary);
     line-height: 1;
 }
+
+hr {
+    color: var(--color-secondary-15);
+    margin: calc(var(--spacing-xl) * 1.5) 0;
+}
