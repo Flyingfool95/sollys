@@ -14,7 +14,7 @@ html {
 
 body {
     min-height: 100dvh;
-
+    overscroll-behavior: none;
     font-size: var(--font-size-sm);
     color: var(--color-secondary);
 }
@@ -23,10 +23,6 @@ main,
 header,
 footer {
     padding: var(--spacing-md);
-}
-
-main > div {
-    margin: var(--spacing-xl) 0;
 }
 
 h1,
@@ -57,4 +53,19 @@ button,
 textarea,
 select {
     font: inherit;
+    color: inherit;
+    font-size: var(--font-size-md);
+    background-color: var(--color-secondary-15);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    resize: none;
+}
+
+input[type="submit"],
+button {
+    background-color: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+    line-height: 1;
 }

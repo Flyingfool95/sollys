@@ -1,6 +1,7 @@
-import { computed } from "@preact/signals";
 import suncalc from "npm:suncalc@1.9.0";
+import { computed } from "@preact/signals";
 import { coordinates } from "./signals.ts";
+import Spinner from "../components/spinner/Spinner.tsx";
 
 export default function Dashboard() {
     function getTimeUntilNextEvent(sunriseSignal, sunsetSignal) {
@@ -23,25 +24,22 @@ export default function Dashboard() {
             const sunrise = timeStringToDate(sunriseStr);
             const sunset = timeStringToDate(sunsetStr);
 
-            let nextEvent: Date, eventName: string;
+            let nextEvent: Date;
 
             if (now < sunrise) {
                 nextEvent = sunrise;
-                eventName = "sunrise";
             } else if (now < sunset) {
                 nextEvent = sunset;
-                eventName = "sunset";
             } else {
                 // next sunrise is tomorrow
                 nextEvent = new Date(sunrise.getTime() + 24 * 60 * 60 * 1000);
-                eventName = "sunrise";
             }
 
             const diffMs = nextEvent - now;
             const hours = Math.floor(diffMs / 1000 / 60 / 60);
             const minutes = Math.floor((diffMs / 1000 / 60) % 60);
 
-            return `${hours}h ${minutes}m until ${eventName}`;
+            return `${hours}h ${minutes}m`;
         });
     }
 
@@ -88,15 +86,22 @@ export default function Dashboard() {
     );
 
     return (
-        <div>
-            <div>Dashboard</div>
-            {sunrise.value ?? "loading sunrise"} sunrise
+        <div className="dashboard">
+            <div className="card">
+                {sunrise.value ?? <Spinner />} <br /> sunrise
+            </div>
             <br />
-            {sunset.value ?? "loading sunset"} sunset
+            <div className="card">
+                {sunset.value ?? <Spinner />} <br /> sunset
+            </div>
             <br />
-            {getDaylightDuration(sunrise, sunset)} of daylight
+            <div className="card">
+                {getDaylightDuration(sunrise, sunset) ?? <Spinner />} <br /> of daylight
+            </div>
             <br />
-            {getTimeUntilNextEvent(sunrise, sunset)}
+            <div className="card">
+                {getTimeUntilNextEvent(sunrise, sunset) ?? <Spinner />} <br /> until event
+            </div>
         </div>
     );
 }
