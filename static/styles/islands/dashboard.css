@@ -6,17 +6,17 @@
     max-width: calc(var(--spacing-xl) * 10);
     margin: var(--spacing-xl) auto;
 
-    font-size: var(--font-size-xs);
+    font-size: var(--font-size-sm);
     line-height: 0.9;
 }
 
 .card .value {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-md);
     font-weight: bold;
 }
 
 .card svg {
-    width: 26px;
+    width: 100%;
     align-self: center;
 }
 
@@ -29,6 +29,7 @@
     column-gap: var(--spacing-xs);
     grid-template-columns: var(--spacing-lg) 2fr;
     align-items: center;
+    cursor: pointer;
 }
 
 .card svg,
@@ -56,14 +57,11 @@
     width: fit-content;
     color: var(--color-primary);
     margin-bottom: var(--spacing-md);
-}
-
-.card:first-of-type svg {
-    width: initial;
+    grid-template-columns: 1fr 2.5fr;
 }
 
 .card:first-of-type .value {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xxl);
 }
 
 .card:first-of-type span {

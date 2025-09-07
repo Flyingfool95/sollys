@@ -91,54 +91,53 @@ export default function Dashboard() {
     const duration = getDaylightDuration(sunrise, sunset);
     const nextEvent = getTimeUntilNextEvent(sunrise, sunset);
 
+    const dataArray = [
+        { name: "sunrise", value: sunrise.value },
+        { name: "sunset", value: sunset.value },
+        { name: "duration", value: duration.value },
+        { name: "nextEvent", value: nextEvent.value },
+    ];
+
     return (
         <div className="dashboard">
-            <div className="card sunrise">
-                {sunrise.value ? (
-                    <>
-                        <Arrow />
-                        <p className="value">{sunrise.value}</p>
-                    </>
-                ) : (
-                    <Spinner />
-                )}
-                <span>sunrise</span>
-            </div>
+            {dataArray &&
+                dataArray.map((data) => {
+                    if (!data.value) return <Spinner key={data.value} />;
 
-            <div className="card sunset">
-                {sunset.value ? (
-                    <>
-                        <Arrow />
-                        <p className="value">{sunset.value}</p>
-                    </>
-                ) : (
-                    <Spinner />
-                )}
-                <span>sunset</span>
-            </div>
-
-            <div className="card duration">
-                {duration.value ? (
-                    <>
-                        <Sun />
-                        <p className="value">{duration.value}</p>
-                    </>
-                ) : (
-                    <Spinner />
-                )}
-                <span>of light</span>
-            </div>
-
-            <div className="card  next-event">
-                {nextEvent.value ? (
-                    <>
-                        <ClockTimeLeft /> <p className="value">{nextEvent.value}</p>
-                    </>
-                ) : (
-                    <Spinner />
-                )}
-                <span>until event</span>
-            </div>
+                    if (data.name === "sunrise") {
+                        return (
+                            <div key={data.name} className="card sunrise">
+                                <Arrow />
+                                <p className="value">{data.value}</p>
+                                <span>sunrise</span>
+                            </div>
+                        );
+                    } else if (data.name === "sunset") {
+                        return (
+                            <div key={data.name} className="card sunset">
+                                <Arrow />
+                                <p className="value">{data.value}</p>
+                                <span>sunset</span>
+                            </div>
+                        );
+                    } else if (data.name === "duration") {
+                        return (
+                            <div key={data.name} className="card duration">
+                                <Sun />
+                                <p className="value">{data.value}</p>
+                                <span>of light</span>
+                            </div>
+                        );
+                    } else if (data.name === "nextEvent") {
+                        return (
+                            <div key={data.name} className="card next-event">
+                                <ClockTimeLeft />
+                                <p className="value">{data.value}</p>
+                                <span>until event</span>
+                            </div>
+                        );
+                    }
+                })}
         </div>
     );
 }
