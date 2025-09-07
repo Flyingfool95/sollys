@@ -2,9 +2,9 @@ import suncalc from "npm:suncalc@1.9.0";
 import { computed } from "@preact/signals";
 import { coordinates } from "./signals.ts";
 import Spinner from "../components/spinner/Spinner.tsx";
-import Sun from "../components/icons/Sun.tsx"
-import Arrow from "../components/icons/Arrow.tsx"
-import ClockTimeLeft from "../components/icons/ClockTimeLeft.tsx"
+import Sun from "../components/icons/Sun.tsx";
+import Arrow from "../components/icons/Arrow.tsx";
+import ClockTimeLeft from "../components/icons/ClockTimeLeft.tsx";
 
 export default function Dashboard() {
     function getTimeUntilNextEvent(sunriseSignal, sunsetSignal) {
@@ -93,55 +93,51 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard">
-            <div className="main-card">
-                <div className="card sunrise">
-                    {sunrise.value ? (
-                        <>
-                            <Arrow />
-                            <p className="value">{sunrise.value}</p>
-                        </>
-                    ) : (
-                        <Spinner />
-                    )}
-                    <span>sunrise</span>
-                </div>
+            <div className="card sunrise">
+                {sunrise.value ? (
+                    <>
+                        <Arrow />
+                        <p className="value">{sunrise.value}</p>
+                    </>
+                ) : (
+                    <Spinner />
+                )}
+                <span>sunrise</span>
             </div>
 
-            <div className="secondary-cards">
-                <div className="card sunset">
-                    {sunset.value ? (
-                        <>
-                            <Arrow />
-                            <p className="value">{sunset.value}</p>
-                        </>
-                    ) : (
-                        <Spinner />
-                    )}
-                    <span>sunset</span>
-                </div>
+            <div className="card sunset">
+                {sunset.value ? (
+                    <>
+                        <Arrow />
+                        <p className="value">{sunset.value}</p>
+                    </>
+                ) : (
+                    <Spinner />
+                )}
+                <span>sunset</span>
+            </div>
 
-                <div className="card duration">
-                    {duration.value ? (
-                        <>
-                            <Sun />
-                            <p className="value">{duration.value}</p>
-                        </>
-                    ) : (
-                        <Spinner />
-                    )}
-                    <span>of light</span>
-                </div>
+            <div className="card duration">
+                {duration.value ? (
+                    <>
+                        <Sun />
+                        <p className="value">{duration.value}</p>
+                    </>
+                ) : (
+                    <Spinner />
+                )}
+                <span>of light</span>
+            </div>
 
-                <div className="card  next-event">
-                    {nextEvent.value ? (
-                        <>
-                            <ClockTimeLeft /> <p className="value">{nextEvent.value}</p>
-                        </>
-                    ) : (
-                        <Spinner />
-                    )}
-                    <span>until event</span>
-                </div>
+            <div className="card  next-event">
+                {nextEvent.value ? (
+                    <>
+                        <ClockTimeLeft /> <p className="value">{nextEvent.value}</p>
+                    </>
+                ) : (
+                    <Spinner />
+                )}
+                <span>until event</span>
             </div>
         </div>
     );

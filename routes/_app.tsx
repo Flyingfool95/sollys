@@ -5,6 +5,7 @@ export default function App({ Component }: PageProps) {
             <head>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
                 <title>Sollys - Every day a little brighter</title>
                 {/* Global */}
                 <link rel="stylesheet" href="/fonts/fonts.css" />
@@ -21,7 +22,6 @@ export default function App({ Component }: PageProps) {
                 <link rel="stylesheet" href="/styles/islands/date-picker.css" />
                 <link rel="stylesheet" href="/styles/islands/location-picker.css" />
                 <link rel="stylesheet" href="/styles/islands/dashboard.css" />
-
             </head>
             <body>
                 <Component />

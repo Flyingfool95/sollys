@@ -54,7 +54,7 @@ textarea,
 select {
     font: inherit;
     color: inherit;
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-sm);
     background-color: var(--color-secondary-15);
     border: none;
     border-radius: var(--border-radius);
