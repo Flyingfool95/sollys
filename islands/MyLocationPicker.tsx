@@ -2,6 +2,7 @@ import { useEffect } from "preact/hooks";
 import { signal } from "@preact/signals";
 import { coordinates } from "./signals/location.signals.ts";
 import Spinner from "../components/spinner/Spinner.tsx";
+import { getCity } from "../helpers/location.helpers.ts";
 
 const city = signal<string | null>(null);
 
@@ -15,6 +16,14 @@ export default function MyLocationPicker() {
         );
     }, []);
 
+    useEffect(() => {
+        if (coordinates.value) {
+            getCity(coordinates.value.lat, coordinates.value.lng)
+                .then((c) => (city.value = c))
+                .catch((err) => console.error(err));
+        }
+    }, [coordinates.value]);
+
     if (!coordinates.value || !city.value) {
         return (
             <div className="myLocationPicker">
@@ -24,15 +33,4 @@ export default function MyLocationPicker() {
     }
 
     return <div className="myLocationPicker">{city.value}</div>;
-}
-
-async function getCity(lat: number, lng: number) {
-    const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`);
-    const data = await res.json();
-    return (
-        (data.address.city || data.address.town || data.address.village) +
-        ", " +
-        data.address.country.substring(0, 3) +
-        "."
-    );
 }

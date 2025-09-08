@@ -22,10 +22,8 @@ export function persistentSignal<T>(key: string, initialValue: T, staleTime = 60
 
     const cached = getLocalStorage();
     if (cached && Date.now() - cached.ts <= staleTime) {
-        console.log("Cache hit..");
         s.value = cached.value;
     } else {
-        console.log("Updating cache");
         saveLocalStorage(initialValue);
     }
 
