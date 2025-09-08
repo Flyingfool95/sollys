@@ -16,7 +16,7 @@ export function persistentSignal<T>(key: string, initialValue: T, staleTime = 60
         try {
             localStorage.setItem(key, JSON.stringify({ value, ts: Date.now() }));
         } catch {
-            /*  */
+            //
         }
     };
 

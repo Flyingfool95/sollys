@@ -1,5 +1,5 @@
 import suncalc from "npm:suncalc@1.9.0";
-import { computed } from "@preact/signals";
+import { computed, Signal } from "@preact/signals";
 import { coordinates } from "./signals/location.signals.ts";
 import Spinner from "../components/spinner/Spinner.tsx";
 import Sun from "../components/icons/Sun.tsx";
@@ -7,7 +7,7 @@ import Arrow from "../components/icons/Arrow.tsx";
 import ClockTimeLeft from "../components/icons/ClockTimeLeft.tsx";
 
 export default function Dashboard() {
-    function getTimeUntilNextEvent(sunriseSignal, sunsetSignal) {
+    function getTimeUntilNextEvent(sunriseSignal: Signal, sunsetSignal: Signal) {
         return computed(() => {
             const sunriseStr = sunriseSignal.value;
             const sunsetStr = sunsetSignal.value;
@@ -17,7 +17,7 @@ export default function Dashboard() {
             const now = new Date();
 
             // Helper: convert "HH:MM" to Date for today
-            function timeStringToDate(timeStr) {
+            function timeStringToDate(timeStr: string) {
                 const [h, m] = timeStr.split(":").map(Number);
                 const d = new Date(now);
                 d.setHours(h, m, 0, 0);
@@ -46,7 +46,7 @@ export default function Dashboard() {
         });
     }
 
-    function getDaylightDuration(sunriseSignal, sunsetSignal) {
+    function getDaylightDuration(sunriseSignal: Signal, sunsetSignal: Signal) {
         return computed(() => {
             const sunrise = sunriseSignal.value;
             const sunset = sunsetSignal.value;
@@ -68,7 +68,7 @@ export default function Dashboard() {
         });
     }
 
-    function getFormattedSunTime(key, date, lat, lng) {
+    function getFormattedSunTime(key: string, date: Date, lat: number, lng: number) {
         const times = suncalc.getTimes(date, lat, lng);
         const target = times[key];
         const hours = target.getHours();
