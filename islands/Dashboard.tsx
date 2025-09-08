@@ -1,6 +1,6 @@
 import suncalc from "npm:suncalc@1.9.0";
 import { computed } from "@preact/signals";
-import { coordinates } from "./signals.ts";
+import { coordinates } from "./signals/location.signals.ts";
 import Spinner from "../components/spinner/Spinner.tsx";
 import Sun from "../components/icons/Sun.tsx";
 import Arrow from "../components/icons/Arrow.tsx";
