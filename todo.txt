@@ -1,7 +1,5 @@
 /* TODO */
 
-- Optimize getting location and city
-    - Cache in localstorage with TTL = 10min
 - Make loader for components
 - Refactor and cleanup components
 - Make styles and animations for dashboard
