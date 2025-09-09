@@ -18,7 +18,6 @@ export default function MyLocationPicker() {
             if (coordinates.value) {
                 try {
                     const currentCity = await getCity(coordinates.value.lat, coordinates.value.lng);
-                    console.log(currentCity);
                     city.value = currentCity;
                 } catch (error) {
                     console.log(error);
