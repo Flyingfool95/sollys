@@ -28,13 +28,7 @@ export function persistentSignal<T>(key: string, initialValue: T, staleTime = 60
     }
 
     let initialized = false;
-    s.subscribe((v) => {
-        if (initialized) {
-            saveLocalStorage(v);
-        } else {
-            initialized = true;
-        }
-    });
+    s.subscribe((v) => (initialized ? saveLocalStorage(v) : (initialized = true)));
 
     return s;
 }
