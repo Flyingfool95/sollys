@@ -3,7 +3,7 @@ import { signal, Signal } from "@preact/signals";
 export function persistentSignal<T>(key: string, initialValue: T, staleTime = 600000): Signal<T> {
     const s = signal<T>(initialValue);
 
-    const getLocalStorage = (): { value: T; ts: number } | null => {
+    const getSignalFromLocalStorage = (): { value: T; ts: number } | null => {
         try {
             const raw = localStorage.getItem(key);
             return raw ? JSON.parse(raw) : null;
@@ -12,7 +12,7 @@ export function persistentSignal<T>(key: string, initialValue: T, staleTime = 60
         }
     };
 
-    const saveLocalStorage = (value: T) => {
+    const saveSignalInLocalStorage = (value: T) => {
         try {
             localStorage.setItem(key, JSON.stringify({ value, ts: Date.now() }));
         } catch {
@@ -20,15 +20,13 @@ export function persistentSignal<T>(key: string, initialValue: T, staleTime = 60
         }
     };
 
-    const cached = getLocalStorage();
-    if (cached && Date.now() - cached.ts <= staleTime) {
-        s.value = cached.value;
-    } else {
-        saveLocalStorage(initialValue);
-    }
+    /* Checking if cache exist and if it is stale */
+    const cached = getSignalFromLocalStorage();
+    cached && Date.now() - cached.ts <= staleTime ? (s.value = cached.value) : saveSignalInLocalStorage(initialValue);
 
+    /* Skip first run to avoid overwriting cached value */
     let initialized = false;
-    s.subscribe((v) => (initialized ? saveLocalStorage(v) : (initialized = true)));
+    s.subscribe((v) => (initialized ? saveSignalInLocalStorage(v) : (initialized = true)));
 
     return s;
 }
