@@ -1,10 +1,7 @@
 import { useEffect } from "preact/hooks";
-import { signal } from "@preact/signals";
-import { coordinates } from "./signals/location.signals.ts";
+import { city, coordinates } from "./signals/location.signals.ts";
 import Spinner from "../components/spinner/Spinner.tsx";
 import { getCity } from "../helpers/location.helpers.ts";
-
-const city = signal<string | null>(null);
 
 export default function MyLocationPicker() {
     useEffect(() => {
@@ -17,11 +14,18 @@ export default function MyLocationPicker() {
     }, []);
 
     useEffect(() => {
-        if (coordinates.value) {
-            getCity(coordinates.value.lat, coordinates.value.lng)
-                .then((c) => (city.value = c))
-                .catch((err) => console.error(err));
+        async function getCurrentCity() {
+            if (coordinates.value) {
+                try {
+                    const currentCity = await getCity(coordinates.value.lat, coordinates.value.lng);
+                    console.log(currentCity);
+                    city.value = currentCity;
+                } catch (error) {
+                    console.log(error);
+                }
+            }
         }
+        getCurrentCity();
     }, [coordinates.value]);
 
     if (!coordinates.value || !city.value) {
