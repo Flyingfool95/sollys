@@ -1,6 +1,6 @@
 import { computed } from "@preact/signals";
 import { coordinates } from "./location.signals.ts";
-import { getDaylightDuration, getFormattedSunTime, getTimeUntilNextEvent } from "../../helpers/dashboard.helpers.ts";
+import { getDaylightDuration, getFormattedSunTime, getTimeUntilNextEvent } from "../helpers/dashboard.helpers.ts";
 
 export const dataArray = computed(() => {
     const sunrise = getFormattedSunTime("sunrise", new Date(), coordinates.value);

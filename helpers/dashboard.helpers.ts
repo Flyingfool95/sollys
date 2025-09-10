@@ -1,10 +1,5 @@
-import { computed, Signal } from "@preact/signals";
 import suncalc from "npm:suncalc@1.9.0";
-// Type definition for clarity
-interface Coordinates {
-    lat: number;
-    lng: number;
-}
+import { Coordinates } from "../types/dashboard.types.ts";
 
 // Utility to parse "HH:MM" string to Date for a given reference date
 export function parseTimeString(timeStr: string, referenceDate: Date = new Date()): Date | null {

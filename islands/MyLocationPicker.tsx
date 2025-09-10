@@ -1,5 +1,5 @@
 import { useEffect } from "preact/hooks";
-import { city, coordinates } from "./signals/location.signals.ts";
+import { city, coordinates } from "../signals/location.signals.ts";
 import Spinner from "./spinner/Spinner.tsx";
 import { getCity } from "../helpers/location.helpers.ts";
 

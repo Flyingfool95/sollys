@@ -1,7 +1,7 @@
 import Card from "./Card.tsx";
 import ClearStorageButton from "./ClearStorageButton.tsx";
 
-import { dataArray } from "./signals/dashboard.signals.ts";
+import { dataArray } from "../signals/dashboard.signals.ts";
 
 export default function Dashboard() {
     return (
