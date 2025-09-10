@@ -1,6 +1,8 @@
 /* TODO */
 - Make loader for components
 - Make dashboard data selectable and persistent
+- Make until next event have correct text
+- Make until next event update every 5 seconds
 - Make styles and animations for dashboard
 - Make feedback form component and hook it up with SMTP
 - Make login form and make it connect to backend db (Cloudflare D1?)
