@@ -1,6 +1,6 @@
 import { useEffect } from "preact/hooks";
 import { city, coordinates } from "./signals/location.signals.ts";
-import Spinner from "../components/spinner/Spinner.tsx";
+import Spinner from "./spinner/Spinner.tsx";
 import { getCity } from "../helpers/location.helpers.ts";
 
 export default function MyLocationPicker() {

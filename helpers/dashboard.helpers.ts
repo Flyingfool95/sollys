@@ -72,7 +72,6 @@ export function getFormattedSunTime(key: string, date: Date, coordinates: Coordi
     if (!coordinates?.lat || !coordinates?.lng) return null;
 
     const times = suncalc.getTimes(date, coordinates.lat, coordinates.lng);
-    console.log(times["sunset"].getTime());
     const targetTime = times[key];
     if (!targetTime || isNaN(targetTime.getTime())) return null;
 
