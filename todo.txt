@@ -10,7 +10,7 @@
 - Make feedback form ratelimiting and session UUID to block any over usage
 - Make basic total visitors data in DB 
     {
-        id (Hashed on clientside OS, browser and resolution. Send hash to server and hash the client hash with the IP),
+        id (Hashed on clientside OS, browser and resolution. Send hash to server and hash the client hash with the IP and salt),
         date,
         country,
     }
