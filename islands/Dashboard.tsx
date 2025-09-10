@@ -2,13 +2,17 @@ import Spinner from "../components/spinner/Spinner.tsx";
 import Sun from "../components/icons/Sun.tsx";
 import Arrow from "../components/icons/Arrow.tsx";
 import ClockTimeLeft from "../components/icons/ClockTimeLeft.tsx";
+import ClearStorageButton from "./ClearStorageButton.tsx";
 import { dataArray } from "./signals/dashboard.signals.ts";
 
 export default function Dashboard() {
     return (
         <div className="dashboard">
+            <ClearStorageButton />
+
             {dataArray.value &&
                 dataArray.value.map((data) => {
+                    console.log(data);
                     if (!data.value) return <Spinner key={data.value} />;
 
                     if (data.name === "sunrise") {
