@@ -7,8 +7,8 @@ import { dataArray } from "./signals/dashboard.signals.ts";
 export default function Dashboard() {
     return (
         <div className="dashboard">
-            {dataArray &&
-                dataArray.map((data) => {
+            {dataArray.value &&
+                dataArray.value.map((data) => {
                     if (!data.value) return <Spinner key={data.value} />;
 
                     if (data.name === "sunrise") {

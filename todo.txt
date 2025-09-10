@@ -1,5 +1,4 @@
 /* TODO */
-
 - Make loader for components
 - Refactor and cleanup components
 - Make styles and animations for dashboard
