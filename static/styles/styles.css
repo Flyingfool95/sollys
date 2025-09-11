@@ -74,10 +74,3 @@ hr {
     color: var(--color-secondary-15);
     margin: calc(var(--spacing-xl) * 1.5) 0;
 }
-
-.spinner,
-.bar {
-    will-change: translate, rotate, opacity;
-}
-
-
