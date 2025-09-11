@@ -72,3 +72,15 @@ export function getFormattedSunTime(key: string, date: Date, coordinates: Coordi
 
     return formatTime(targetTime);
 }
+
+//Setting selected element first in array
+export function selectDashboardData(clickedName: string, array: Array<any>, setArray: any) {
+    const index = array.findIndex((item) => item.name === clickedName);
+
+    if (index === -1 || index === 0) return array; // nothing to change
+
+    const before = array.slice(0, index);
+    const after = array.slice(index);
+
+    setArray([...after, ...before]);
+}

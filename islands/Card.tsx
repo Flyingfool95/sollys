@@ -2,6 +2,7 @@ import { VNode } from "preact";
 import Arrow from "./icons/Arrow.tsx";
 import ClockTimeLeft from "./icons/ClockTimeLeft.tsx";
 import Sun from "./icons/Sun.tsx";
+import { selectDashboardData } from "../helpers/dashboard.helpers.ts";
 
 const iconMap: Record<string, VNode> = {
     sunset: <Arrow />,
@@ -16,14 +17,25 @@ const textMap: Record<string, string> = {
     nextEvent: "until event",
 };
 
-export default function Card({ data }: { data: { name: string; value: string | null } }) {
+export default function Card({
+    data,
+    array,
+    setArray,
+}: {
+    data: { name: string; value: any };
+    array: Array<any>;
+    setArray: any;
+}) {
     if (!data.value) return <CardLoader />;
 
     const Icon = iconMap[data.name] ?? null;
     const Text = textMap[data.name] ?? null;
 
     return (
-        <div className={`card ${data.name}`}>
+        <div
+            className={`card ${data.name}`}
+            onClick={(e) => selectDashboardData(e.currentTarget.classList[1], array, setArray)}
+        >
             {Icon}
             <p className="value">{data.value}</p>
             <span>{Text}</span>
