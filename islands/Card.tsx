@@ -1,5 +1,4 @@
 import { VNode } from "preact";
-import Spinner from "./spinner/Spinner.tsx";
 import Arrow from "./icons/Arrow.tsx";
 import ClockTimeLeft from "./icons/ClockTimeLeft.tsx";
 import Sun from "./icons/Sun.tsx";
@@ -18,7 +17,7 @@ const textMap: Record<string, string> = {
 };
 
 export default function Card({ data }: { data: { name: string; value: string | null } }) {
-    if (!data.value) return <Spinner />;
+    if (!data.value) return <CardLoader />;
 
     const Icon = iconMap[data.name] ?? null;
     const Text = textMap[data.name] ?? null;
@@ -30,4 +29,8 @@ export default function Card({ data }: { data: { name: string; value: string | n
             <span>{Text}</span>
         </div>
     );
+}
+
+function CardLoader() {
+    return <div className="card loader"></div>;
 }

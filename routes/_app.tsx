@@ -22,6 +22,7 @@ export default function App({ Component }: PageProps) {
                 <link rel="stylesheet" href="/styles/islands/date-picker.css" />
                 <link rel="stylesheet" href="/styles/islands/location-picker.css" />
                 <link rel="stylesheet" href="/styles/islands/dashboard.css" />
+                <link rel="stylesheet" href="/styles/islands/loader.css" />
             </head>
             <body>
                 <Component />
