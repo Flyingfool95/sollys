@@ -8,7 +8,7 @@
     animation: Loader 2000ms infinite linear;
 }
 .card.loader:first-of-type {
-    height: 64px;
+    height: 80px;
 }
 
 @keyframes Loader {

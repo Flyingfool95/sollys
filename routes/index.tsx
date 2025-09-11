@@ -5,7 +5,7 @@ import Dashboard from "../islands/Dashboard.tsx";
 
 export default function Home() {
     return (
-        <div>
+        <>
             <Header />
 
             <main>
@@ -14,6 +14,6 @@ export default function Home() {
                 <Feedback />
             </main>
             <Footer />
-        </div>
+        </>
     );
 }

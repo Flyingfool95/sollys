@@ -13,6 +13,8 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     min-height: 100dvh;
     overscroll-behavior: none;
     font-size: var(--font-size-sm);
@@ -23,6 +25,13 @@ main,
 header,
 footer {
     padding: var(--spacing-md);
+}
+
+footer{
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1,
@@ -62,6 +71,12 @@ select {
     resize: none;
 }
 
+textarea {
+    resize: vertical;
+    min-height: calc(var(--spacing-xl) * 3);
+    max-height: calc(var(--spacing-xl) * 5);
+}
+
 input[type="submit"],
 button {
     background-color: transparent;
@@ -72,5 +87,5 @@ button {
 
 hr {
     color: var(--color-secondary-15);
-    margin: calc(var(--spacing-xl) * 1.5) 0;
+    margin: calc(var(--spacing-xl) * 2) 0;
 }
