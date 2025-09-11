@@ -4,17 +4,31 @@ import { getCity } from "../helpers/location.helpers.ts";
 
 export default function MyLocationPicker() {
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition(
-            (pos) => {
-                coordinates.value = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-            },
-            (err) => console.error(err)
-        );
+        if (!navigator.geolocation) {
+            console.error("Geolocation is not supported");
+            return;
+        }
+
+        const options = {
+            enableHighAccuracy: false, // faster, less battery
+            timeout: 5000, // max wait 5s
+            maximumAge: 10000, // allow cached positions up to 10s old
+        };
+
+        const success = (pos) => {
+            coordinates.value = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        };
+
+        const error = (err) => {
+            console.error("Geolocation error:", err);
+        };
+
+        navigator.geolocation.getCurrentPosition(success, error, options);
     }, []);
 
     useEffect(() => {
         async function getCurrentCity() {
-            if (coordinates.value) {
+            if (coordinates.value /* also check if cahce is stale otherwise dont do a fetch */) {
                 try {
                     const currentCity = await getCity(coordinates.value.lat, coordinates.value.lng);
                     city.value = currentCity;
