@@ -55,7 +55,7 @@
     line-height: 0.9 !important;
     width: fit-content;
     color: var(--color-primary);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
     grid-template-columns: 1fr 2.5fr;
 }
 
