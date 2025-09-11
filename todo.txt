@@ -1,5 +1,4 @@
 /* TODO */
-- Make loader for components
 - Make dashboard data selectable and persistent
 - Make until next event have correct text
 - Make until next event update every 5 seconds
