@@ -15,7 +15,6 @@ export default function App({ Component }: PageProps) {
                 <link rel="stylesheet" href="/styles/components/header.css" />
                 <link rel="stylesheet" href="/styles/components/logo.css" />
                 <link rel="stylesheet" href="/styles/components/footer.css" />
-                <link rel="stylesheet" href="/styles/components/spinner.css" />
                 <link rel="stylesheet" href="/styles/components/feedback.css" />
 
                 {/* Islands */}
