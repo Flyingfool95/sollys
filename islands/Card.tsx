@@ -30,7 +30,6 @@ export default function Card({
     setArray: any;
 }) {
     if (isLoading) return <CardLoader />;
-    console.log(data);
     const Icon = iconMap[data.name] ?? null;
     const Text = textMap[data.name] ?? null;
 
