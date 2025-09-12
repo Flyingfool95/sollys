@@ -1,5 +1,6 @@
 import suncalc from "npm:suncalc@1.9.0";
 import { Coordinates } from "../types/dashboard.types.ts";
+import { persistentStorage } from "./global.helpers.ts";
 
 // Utility to parse "HH:MM" string to Date for a given reference date
 export function parseTimeString(timeStr: string, referenceDate: Date = new Date()): Date | null {
@@ -75,6 +76,7 @@ export function getFormattedSunTime(key: string, date: Date, coordinates: Coordi
 
 //Setting selected element first in array
 export function selectDashboardData(clickedName: string, array: Array<any>, setArray: any) {
+    const selectedData = persistentStorage("selected-data");
     const index = array.findIndex((item) => item.name === clickedName);
 
     if (index === -1 || index === 0) return array; // nothing to change
@@ -83,4 +85,5 @@ export function selectDashboardData(clickedName: string, array: Array<any>, setA
     const after = array.slice(index);
 
     setArray([...after, ...before]);
+    selectedData.set(clickedName, null);
 }

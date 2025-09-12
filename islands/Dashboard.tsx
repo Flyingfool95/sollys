@@ -1,9 +1,13 @@
 import { useState, useEffect } from "preact/hooks";
 import { dataArray } from "../signals/dashboard.signals.ts";
 import Card from "./Card.tsx";
+import { selectDashboardData } from "../helpers/dashboard.helpers.ts";
+import { persistentStorage } from "../helpers/global.helpers.ts";
 
 export default function Dashboard() {
     const [dashDataArray, setDashDataArray] = useState([...dataArray.value]);
+
+    const [isCheckingStorage, setIsCheckingStorage] = useState(true);
 
     useEffect(() => {
         const unsubscribe = dataArray.subscribe((newValue) => {
@@ -12,10 +16,23 @@ export default function Dashboard() {
         return () => unsubscribe();
     }, []);
 
+    useEffect(() => {
+        const selectedData = persistentStorage("selected-data");
+
+        selectDashboardData(selectedData.get() as string, dashDataArray, setDashDataArray);
+        setIsCheckingStorage(false);
+    }, []);
+
     return (
         <div className="dashboard">
             {dashDataArray.map((data) => (
-                <Card key={data.name} data={data} array={dashDataArray} setArray={setDashDataArray} />
+                <Card
+                    key={data.name}
+                    data={data}
+                    isLoading={isCheckingStorage || !data.value}
+                    array={dashDataArray}
+                    setArray={setDashDataArray}
+                />
             ))}
         </div>
     );

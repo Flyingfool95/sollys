@@ -1,5 +1,4 @@
 /* TODO */
-- Make dashboard data order persistent
 - Make until next event have correct text
 - Make until next event update every 5 seconds
 - Make animations for dashboard
