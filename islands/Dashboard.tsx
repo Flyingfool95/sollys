@@ -1,7 +1,7 @@
 import { useState, useEffect } from "preact/hooks";
 import { dataArray } from "../signals/dashboard.signals.ts";
 import Card from "./Card.tsx";
-import { selectDashboardData } from "../helpers/dashboard.helpers.ts";
+import { prioritizeSelectedItem } from "../helpers/dashboard.helpers.ts";
 import { persistentStorage } from "../helpers/global.helpers.ts";
 
 export default function Dashboard() {
@@ -19,7 +19,7 @@ export default function Dashboard() {
     useEffect(() => {
         const selectedData = persistentStorage("selected-data");
 
-        selectDashboardData(selectedData.get() as string, dashDataArray, setDashDataArray);
+        prioritizeSelectedItem(selectedData.get() as string, dashDataArray, setDashDataArray);
         setIsCheckingStorage(false);
     }, []);
 

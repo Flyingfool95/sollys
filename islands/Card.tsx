@@ -2,7 +2,7 @@ import { VNode } from "preact";
 import Arrow from "./icons/Arrow.tsx";
 import ClockTimeLeft from "./icons/ClockTimeLeft.tsx";
 import Sun from "./icons/Sun.tsx";
-import { selectDashboardData } from "../helpers/dashboard.helpers.ts";
+import { prioritizeSelectedItem } from "../helpers/dashboard.helpers.ts";
 
 const iconMap: Record<string, VNode> = {
     sunset: <Arrow />,
@@ -36,7 +36,7 @@ export default function Card({
     return (
         <div
             className={`card ${data.name}`}
-            onClick={(e) => selectDashboardData(e.currentTarget.classList[1], array, setArray)}
+            onClick={(e) => prioritizeSelectedItem(e.currentTarget.classList[1], array, setArray)}
         >
             {Icon}
             <p className="value">{data.value}</p>
