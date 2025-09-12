@@ -27,7 +27,10 @@ export function formatDateToHHMM(date: Date): string {
 }
 
 // Calculate time until next sunrise or sunset
-export function getTimeUntilNextSunEvent(sunriseStr: string | null, sunsetStr: string | null): string | null {
+export function getTimeUntilNextSunEvent(
+    sunriseStr: string | null,
+    sunsetStr: string | null
+): { name: "until sunrise" | "until sunset"; value: string } | null {
     if (!sunriseStr || !sunsetStr) return null;
 
     const now = new Date();
@@ -36,18 +39,22 @@ export function getTimeUntilNextSunEvent(sunriseStr: string | null, sunsetStr: s
 
     if (!sunrise || !sunset) return null;
 
-    let nextEvent: Date;
+    let nextEvent: { name: "until sunrise" | "until sunset"; value: Date };
+
     if (now < sunrise) {
-        nextEvent = sunrise;
+        nextEvent = { name: "until sunrise", value: sunrise };
     } else if (now < sunset) {
-        nextEvent = sunset;
+        nextEvent = { name: "until sunset", value: sunset };
     } else {
         // Next sunrise is tomorrow
-        nextEvent = new Date(sunrise.getTime() + 24 * 60 * 60 * 1000);
+        nextEvent = { name: "until sunrise", value: new Date(sunrise.getTime() + 24 * 60 * 60 * 1000) };
     }
 
-    const diffMs = nextEvent.getTime() - now.getTime();
-    return formatDurationMs(diffMs);
+    const diffMs = nextEvent.value.getTime() - now.getTime();
+    return {
+        name: nextEvent.name,
+        value: formatDurationMs(diffMs),
+    };
 }
 
 // Calculate daylight duration

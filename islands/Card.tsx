@@ -14,7 +14,8 @@ const textMap: Record<string, string> = {
     sunset: "sunset",
     sunrise: "sunrise",
     duration: "of light",
-    nextEvent: "until event",
+    nextEventSunset: "until sunset",
+    nextEventSunrise: "until sunrise",
 };
 
 export default function Card({
@@ -29,7 +30,7 @@ export default function Card({
     setArray: any;
 }) {
     if (isLoading) return <CardLoader />;
-
+    console.log(data);
     const Icon = iconMap[data.name] ?? null;
     const Text = textMap[data.name] ?? null;
 
@@ -39,8 +40,8 @@ export default function Card({
             onClick={(e) => prioritizeSelectedItem(e.currentTarget.classList[1], array, setArray)}
         >
             {Icon}
-            <p className="value">{data.value}</p>
-            <span>{Text}</span>
+            <p className="value">{data.value.value ?? data.value}</p>
+            <span>{data.value.name ?? Text}</span>
         </div>
     );
 }
