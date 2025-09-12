@@ -1,7 +1,7 @@
 import { useState, useEffect } from "preact/hooks";
 import { signal, Signal } from "@preact/signals";
 
-/* ---------- helpers ---------- */
+// Persist storage helpers
 type Stored<T> = { value: T; ts?: number };
 
 function loadFromStorage<T>(key: string): Stored<T> | null {
@@ -16,12 +16,12 @@ function loadFromStorage<T>(key: string): Stored<T> | null {
 function saveToStorage<T>(key: string, value: T, staleTime: number | null | typeof Infinity) {
     try {
         if (staleTime === null || staleTime === Infinity) {
-            localStorage.setItem(key, JSON.stringify({ value })); // 🚫 no ts
+            localStorage.setItem(key, JSON.stringify({ value }));
         } else {
             localStorage.setItem(key, JSON.stringify({ value, ts: Date.now() }));
         }
     } catch {
-        // ignore quota errors
+        // ignore
     }
 }
 
@@ -38,7 +38,7 @@ function resolveInitial<T>(key: string, initialValue: T, staleTime: number | nul
     return initialValue;
 }
 
-/* ---------- signal version ---------- */
+// Signal version
 export function persistentSignal<T>(
     key: string,
     initialValue: T,
@@ -57,14 +57,16 @@ export function persistentSignal<T>(
             try {
                 const parsed = JSON.parse(e.newValue);
                 if (parsed?.value !== undefined) s.value = parsed.value;
-            } catch {}
+            } catch {
+                // ignore
+            }
         }
     });
 
     return s;
 }
 
-/* ---------- hook version ---------- */
+// Hook version
 export function usePersistentState<T>(
     key: string,
     initialValue: T,
@@ -82,7 +84,9 @@ export function usePersistentState<T>(
                 try {
                     const parsed = JSON.parse(e.newValue);
                     if (parsed?.value !== undefined) setState(parsed.value);
-                } catch {}
+                } catch {
+                    // ignore
+                }
             }
         };
         globalThis.addEventListener("storage", onStorage);
@@ -92,7 +96,7 @@ export function usePersistentState<T>(
     return [state, setState];
 }
 
-/* ---------- plain API ---------- */
+// Plain API version
 export function persistentStorage<T>(key: string) {
     return {
         get: (): T | null => {
@@ -103,7 +107,9 @@ export function persistentStorage<T>(key: string) {
         remove: () => {
             try {
                 localStorage.removeItem(key);
-            } catch {}
+            } catch {
+                // ignore
+            }
         },
     };
 }
