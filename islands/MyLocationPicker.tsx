@@ -15,11 +15,11 @@ export default function MyLocationPicker() {
             maximumAge: 10000, // allow cached positions up to 10s old
         };
 
-        const success = (pos) => {
+        const success = (pos: GeolocationPosition) => {
             coordinates.value = { lat: pos.coords.latitude, lng: pos.coords.longitude };
         };
 
-        const error = (err) => {
+        const error = (err: GeolocationPositionError) => {
             console.error("Geolocation error:", err);
         };
 
