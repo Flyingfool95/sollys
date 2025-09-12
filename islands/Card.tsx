@@ -1,4 +1,4 @@
-import { VNode } from "preact";
+import { VNode, JSX } from "preact";
 import Arrow from "./icons/Arrow.tsx";
 import ClockTimeLeft from "./icons/ClockTimeLeft.tsx";
 import Sun from "./icons/Sun.tsx";
@@ -16,6 +16,13 @@ const textMap: Record<string, string> = {
     duration: "of light",
     nextEventSunset: "until sunset",
     nextEventSunrise: "until sunrise",
+};
+
+const handleKeyDown = (e: JSX.TargetedKeyboardEvent<HTMLDivElement>, array: Array<any>, setArray: any) => {
+    if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault(); // prevent scrolling for space
+        prioritizeSelectedItem(e.currentTarget.classList[1], array, setArray);
+    }
 };
 
 export default function Card({
@@ -37,6 +44,9 @@ export default function Card({
         <div
             className={`card ${data.name}`}
             onClick={(e) => prioritizeSelectedItem(e.currentTarget.classList[1], array, setArray)}
+            onKeyDown={(e) => handleKeyDown(e, array, setArray)}
+            tabIndex={0}
+            role="button"
         >
             {Icon}
             <p className="value">{data.value.value ?? data.value}</p>
