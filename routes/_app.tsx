@@ -13,9 +13,9 @@ export default function App({ Component }: PageProps) {
                     content="Project Sollys is a PWA that helps northern residents make the most of their days by showing sunrise, sunset, daylight duration, and daily light-based tips."
                 />
                 {/* Global */}
-                <link rel="stylesheet" href="/fonts/fonts.css" />
-                <link rel="stylesheet" href="/styles/variables.css" />
-                <link rel="stylesheet" href="/styles/styles.css" />
+                <link rel="preload" href="/fonts/fonts.css" />
+                <link rel="preload" href="/styles/variables.css" />
+                <link rel="preload" href="/styles/styles.css" />
                 {/* Components */}
                 <link rel="stylesheet" href="/styles/components/header.css" />
                 <link rel="stylesheet" href="/styles/components/logo.css" />
