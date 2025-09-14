@@ -16,9 +16,12 @@ export default function App({ Component }: PageProps) {
                 <link rel="preload" href="/styles/styles.css" as="style" />
                 <link rel="stylesheet" href="/styles/styles.css" />
                 {/* Components */}
-                <link rel="stylesheet" href="/styles/components/header.css" />
-                <link rel="stylesheet" href="/styles/components/logo.css" />
-                <link rel="stylesheet" href="/styles/components/footer.css" />
+                <link rel="preload" href="/styles/header.css" as="style" />
+                <link rel="stylesheet" href="/styles/header.css" />
+                <link rel="preload" href="/styles/footer.css" as="style" />
+                <link rel="stylesheet" href="/styles/footer.css" />
+                <link rel="preload" href="/styles/logo.css" as="style" />
+                <link rel="stylesheet" href="/styles/logo.css" />
                 <link rel="stylesheet" href="/styles/components/feedback.css" />
                 {/* Islands */}
                 <link rel="stylesheet" href="/styles/islands/date-picker.css" />
