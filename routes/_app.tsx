@@ -8,6 +8,7 @@ export default function App({ Component }: PageProps) {
                 <meta name="theme-color" content="#001a2d" />
                 <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
                 <title>Sollys - Every day a little brighter</title>
+                <meta name="description" content="See today’s sunrise, sunset, and how long the sun will shine in your location with the Sollys daylight app." />
                 {/* Global */}
                 <link rel="preload" href="/styles/fonts.css" as="style" />
                 <link rel="stylesheet" href="/styles/fonts.css" />
