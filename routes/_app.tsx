@@ -9,15 +9,17 @@ export default function App({ Component }: PageProps) {
                 <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
                 <title>Sollys - Every day a little brighter</title>
                 {/* Global */}
-                <link rel="stylesheet" href="/fonts/fonts.css" />
+                <link rel="preload" href="/styles/fonts.css" as="style" />
+                <link rel="stylesheet" href="/styles/fonts.css" />
+                <link rel="preload" href="/styles/variables.css" as="style" />
                 <link rel="stylesheet" href="/styles/variables.css" />
+                <link rel="preload" href="/styles/styles.css" as="style" />
                 <link rel="stylesheet" href="/styles/styles.css" />
                 {/* Components */}
                 <link rel="stylesheet" href="/styles/components/header.css" />
                 <link rel="stylesheet" href="/styles/components/logo.css" />
                 <link rel="stylesheet" href="/styles/components/footer.css" />
                 <link rel="stylesheet" href="/styles/components/feedback.css" />
-
                 {/* Islands */}
                 <link rel="stylesheet" href="/styles/islands/date-picker.css" />
                 <link rel="stylesheet" href="/styles/islands/location-picker.css" />
