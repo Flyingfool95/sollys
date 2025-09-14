@@ -4,6 +4,7 @@
 - Make PWA maifest
 - Use optimized fonts!
 - Add a robots.txt
+- Fix bug where default order of data is rendered and then reload and localstroage order
 
 - Make feedback form component and hook it up with SMTP
 - Make feedback form ratelimiting and session UUID to block any over usage
