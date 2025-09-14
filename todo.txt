@@ -3,7 +3,6 @@
 - Fix so that user has to click a button to allow requesting geolocation
 - Fix accessibility issues
 - Add meta description
-- Add lang attribute to html
 - Make PWA maifest
 - Use optimized fonts!
 - Look into Render blocking requests
