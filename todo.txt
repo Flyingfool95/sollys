@@ -3,6 +3,7 @@
 - Fix so that user has to click a button to allow requesting geolocation
 - Make PWA maifest
 - Use optimized fonts!
+- Add a robots.txt
 
 - Make feedback form component and hook it up with SMTP
 - Make feedback form ratelimiting and session UUID to block any over usage
