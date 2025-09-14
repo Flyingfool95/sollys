@@ -11,7 +11,7 @@ export default function MyLocationPicker() {
 
         const options = {
             enableHighAccuracy: false, // faster, less battery
-            timeout: 5000, // max wait 5s
+            //timeout: 5000, // max wait 5s
             maximumAge: 10000, // allow cached positions up to 10s old
         };
 
