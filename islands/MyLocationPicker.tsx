@@ -5,7 +5,7 @@ import { getCity } from "../helpers/location.helpers.ts";
 export default function MyLocationPicker() {
     useEffect(() => {
         if (!navigator.geolocation) {
-            console.error("Geolocation is not supported");
+            alert("Geolocation is not supported");
             return;
         }
 
