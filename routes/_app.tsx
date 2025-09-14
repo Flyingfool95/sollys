@@ -5,6 +5,7 @@ export default function App({ Component }: PageProps) {
             <head>
                 <meta charset="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <meta name="theme-color" content="#122e45" />
                 <link rel="icon" type="image/x-icon" href="/favicon.png"></link>
                 <title>Sollys - Every day a little brighter</title>
                 {/* Global */}
