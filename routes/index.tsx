@@ -11,7 +11,7 @@ export default function Home() {
             <main>
                 <Dashboard />
                 <hr />
-                <Feedback />
+                {/* <Feedback /> */}
             </main>
             <Footer />
         </>
