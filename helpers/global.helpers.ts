@@ -42,7 +42,7 @@ function resolveInitial<T>(key: string, initialValue: T, staleTime: number | nul
 export function persistentSignal<T>(
     key: string,
     initialValue: T,
-    staleTime: number | null | typeof Infinity = 600_000
+    staleTime: number | null | typeof Infinity = 60_000 * 60 //1h default cache in localStorage
 ): Signal<T> {
     const s = signal<T>(resolveInitial(key, initialValue, staleTime));
 
@@ -70,7 +70,7 @@ export function persistentSignal<T>(
 export function usePersistentState<T>(
     key: string,
     initialValue: T,
-    staleTime: number | null | typeof Infinity = 600_000
+    staleTime: number | null | typeof Infinity = 60_000 * 60 //1h default cache in localStorage
 ): [T, (value: T | ((prev: T) => T)) => void] {
     const [state, setState] = useState<T>(() => resolveInitial(key, initialValue, staleTime));
 
@@ -103,7 +103,8 @@ export function persistentStorage<T>(key: string) {
             const cached = loadFromStorage<T>(key);
             return cached?.value ?? null; // return null if nothing is stored
         },
-        set: (value: T, staleTime: number | null | typeof Infinity = 600_000) => saveToStorage(key, value, staleTime),
+        set: (value: T, staleTime: number | null | typeof Infinity = 60_000 * 60 /* 1h default */) =>
+            saveToStorage(key, value, staleTime),
         remove: () => {
             try {
                 localStorage.removeItem(key);
