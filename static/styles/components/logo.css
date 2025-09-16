@@ -7,7 +7,7 @@
     overflow: hidden;
 }
 
-.logo .bar {
+.logo__bar {
     position: absolute;
     left: 0;
     width: 100%;
@@ -16,17 +16,17 @@
     animation: logo 750ms linear infinite;
 }
 
-.logo .bar:nth-child(1) {
+.logo__bar:nth-child(1) {
     bottom: 21px;
     animation: logo 750ms linear infinite, fadeIn 750ms linear infinite;
 }
-.logo .bar:nth-child(2) {
+.logo__bar:nth-child(2) {
     bottom: 15px;
 }
-.logo .bar:nth-child(3) {
+.logo__bar:nth-child(3) {
     bottom: 9px;
 }
-.logo .bar:nth-child(4) {
+.logo__bar:nth-child(4) {
     bottom: 3px;
 }
 

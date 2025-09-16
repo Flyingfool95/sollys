@@ -49,8 +49,8 @@ export default function Card({
             role="button"
         >
             {Icon}
-            <p className="value">{data.value.value ?? data.value}</p>
-            <span>{data.value.name ?? Text}</span>
+            <p className="card__value">{data.value.value ?? data.value}</p>
+            <span className="card__text">{data.value.name ?? Text}</span>
         </div>
     );
 }
