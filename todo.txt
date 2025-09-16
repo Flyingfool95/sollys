@@ -1,8 +1,7 @@
 /* TODO */
 //Pagespeed Insights related todos
-- Make permission button in modal
+- fix helepr functions to return object with data and build strings in markup instead
 - Make PWA manifest
-- Use optimized fonts!
 - Add a robots.txt
 - Fix bug where default order of data is rendered and then reload and localstroage order
 

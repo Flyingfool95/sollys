@@ -11,12 +11,13 @@ export default function Modal() {
         <div className={`modal ${isHidden ? "hidden" : ""}`}>
             <div className="modal__content">
                 <p>
-                    This service uses location data to display the daylight data. Out of best pratices we ask you to
-                    permit us using it. All location data is stored locally on this device.
+                    This service uses your location to display accurate daylight information. For best practices, we ask
+                    for your permission before accessing it. Your location data is stored only on this device and never
+                    shared.
                 </p>
                 <br />
                 <button type="button" onClick={handleShowModal}>
-                    Give permission to use location
+                    Allow location access
                 </button>
             </div>
         </div>

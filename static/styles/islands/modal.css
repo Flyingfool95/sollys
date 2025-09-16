@@ -13,7 +13,7 @@
 }
 
 .modal__content {
-    background-color: var(--color-secondary-15);
+    background-color: var(--color-bg-top);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
 }

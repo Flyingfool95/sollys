@@ -95,3 +95,9 @@ hr {
 .hidden {
     display: none;
 }
+
+@media (min-width: 370px) {
+    body {
+        font-size: var(--font-size-md);
+    }
+}
