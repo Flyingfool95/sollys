@@ -10,6 +10,7 @@ import * as $login from "./routes/login.tsx";
 import * as $Card from "./islands/Card.tsx";
 import * as $ClearStorageButton from "./islands/ClearStorageButton.tsx";
 import * as $Dashboard from "./islands/Dashboard.tsx";
+import * as $Modal from "./islands/Modal.tsx";
 import * as $MyDatePicker from "./islands/MyDatePicker.tsx";
 import * as $MyLocationPicker from "./islands/MyLocationPicker.tsx";
 import * as $icons_Arrow from "./islands/icons/Arrow.tsx";
@@ -29,6 +30,7 @@ const manifest = {
     "./islands/Card.tsx": $Card,
     "./islands/ClearStorageButton.tsx": $ClearStorageButton,
     "./islands/Dashboard.tsx": $Dashboard,
+    "./islands/Modal.tsx": $Modal,
     "./islands/MyDatePicker.tsx": $MyDatePicker,
     "./islands/MyLocationPicker.tsx": $MyLocationPicker,
     "./islands/icons/Arrow.tsx": $icons_Arrow,

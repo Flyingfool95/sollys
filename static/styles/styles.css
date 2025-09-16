@@ -27,7 +27,7 @@ footer {
     padding: var(--spacing-md);
 }
 
-footer{
+footer {
     margin-top: auto;
     display: flex;
     flex-direction: column;
@@ -46,6 +46,7 @@ h5 {
 
 p {
     max-width: 75ch;
+    line-height: 1.6;
 }
 
 img,
@@ -69,6 +70,7 @@ select {
     border-radius: var(--border-radius);
     padding: var(--spacing-xs) var(--spacing-sm);
     resize: none;
+    line-height: 1.6;
 }
 
 textarea {
@@ -88,4 +90,8 @@ button {
 hr {
     color: var(--color-secondary-15);
     margin: calc(var(--spacing-xl) * 2) 0;
+}
+
+.hidden {
+    display: none;
 }

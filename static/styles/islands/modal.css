@@ -1,0 +1,19 @@
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    place-items: center;
+
+    background-color: #00000080;
+    backdrop-filter: blur(4px);
+}
+
+.modal__content {
+    background-color: var(--color-secondary-15);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}

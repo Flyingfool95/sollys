@@ -1,9 +1,10 @@
 import { useEffect } from "preact/hooks";
-import { city, coordinates } from "../signals/location.signals.ts";
+import { city, coordinates, locationConsent } from "../signals/location.signals.ts";
 import { getCity } from "../helpers/location.helpers.ts";
 
 export default function MyLocationPicker() {
     useEffect(() => {
+        if (!locationConsent.value) return;
         if (!navigator.geolocation) {
             alert("Geolocation is not supported");
             return;
@@ -24,7 +25,7 @@ export default function MyLocationPicker() {
         };
 
         navigator.geolocation.getCurrentPosition(success, error, options);
-    }, []);
+    }, [locationConsent.value]);
 
     useEffect(() => {
         async function getCurrentCity() {

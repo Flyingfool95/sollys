@@ -3,6 +3,8 @@ import { dataArray } from "../signals/dashboard.signals.ts";
 import Card from "./Card.tsx";
 import { prioritizeSelectedItem } from "../helpers/dashboard.helpers.ts";
 import { persistentStorage } from "../helpers/global.helpers.ts";
+import { locationConsent } from "../signals/location.signals.ts";
+import Modal from "./Modal.tsx";
 
 export default function Dashboard() {
     const [dashDataArray, setDashDataArray] = useState([...dataArray.value]);
@@ -25,6 +27,7 @@ export default function Dashboard() {
 
     return (
         <div className="dashboard">
+            {!locationConsent.value && <Modal />}
             {dashDataArray.map((data) => (
                 <Card
                     key={data.name}
