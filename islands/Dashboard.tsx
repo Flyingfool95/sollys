@@ -8,21 +8,14 @@ import Modal from "./Modal.tsx";
 
 export default function Dashboard() {
     const [dashDataArray, setDashDataArray] = useState([...dataArray.value]);
-
-    const [isCheckingStorage, setIsCheckingStorage] = useState(true);
+    const selectedData = persistentStorage("selected-data");
+    prioritizeSelectedItem(selectedData.get() as string, dashDataArray, setDashDataArray);
 
     useEffect(() => {
         const unsubscribe = dataArray.subscribe((newValue) => {
             setDashDataArray([...newValue]);
         });
         return () => unsubscribe();
-    }, []);
-
-    useEffect(() => {
-        const selectedData = persistentStorage("selected-data");
-
-        prioritizeSelectedItem(selectedData.get() as string, dashDataArray, setDashDataArray);
-        setIsCheckingStorage(false);
     }, []);
 
     return (
@@ -32,7 +25,7 @@ export default function Dashboard() {
                 <Card
                     key={data.name}
                     data={data}
-                    isLoading={isCheckingStorage || !data.value}
+                    isLoading={!data.value}
                     array={dashDataArray}
                     setArray={setDashDataArray}
                 />
