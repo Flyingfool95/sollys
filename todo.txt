@@ -1,5 +1,6 @@
 /* TODO */
 //Pagespeed Insights related todos
+- Look at localstorage data UI flash (i.e Modal)
 - fix helepr functions to return object with data and build strings in markup instead
 - Make PWA manifest
 - Add a robots.txt
