@@ -5,8 +5,11 @@ import { prioritizeSelectedItem } from "../helpers/dashboard.helpers.ts";
 import { persistentStorage } from "../helpers/global.helpers.ts";
 import { locationConsent } from "../signals/location.signals.ts";
 import Modal from "./Modal.tsx";
+import { ServerData } from "../types/serverData.types.ts";
 
-export default function Dashboard() {
+export default function Dashboard({ data }: { data: ServerData }) {
+    //Get data.locationData.latitude and longitude to the signal?
+    
     const [dashDataArray, setDashDataArray] = useState([...dataArray.value]);
     const selectedData = persistentStorage("selected-data");
     prioritizeSelectedItem(selectedData.get() as string, dashDataArray, setDashDataArray);

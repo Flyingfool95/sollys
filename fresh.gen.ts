@@ -12,7 +12,6 @@ import * as $ClearStorageButton from "./islands/ClearStorageButton.tsx";
 import * as $Dashboard from "./islands/Dashboard.tsx";
 import * as $Modal from "./islands/Modal.tsx";
 import * as $MyDatePicker from "./islands/MyDatePicker.tsx";
-import * as $MyLocationPicker from "./islands/MyLocationPicker.tsx";
 import * as $icons_Arrow from "./islands/icons/Arrow.tsx";
 import * as $icons_ClockTimeLeft from "./islands/icons/ClockTimeLeft.tsx";
 import * as $icons_Sun from "./islands/icons/Sun.tsx";
@@ -32,7 +31,6 @@ const manifest = {
     "./islands/Dashboard.tsx": $Dashboard,
     "./islands/Modal.tsx": $Modal,
     "./islands/MyDatePicker.tsx": $MyDatePicker,
-    "./islands/MyLocationPicker.tsx": $MyLocationPicker,
     "./islands/icons/Arrow.tsx": $icons_Arrow,
     "./islands/icons/ClockTimeLeft.tsx": $icons_ClockTimeLeft,
     "./islands/icons/Sun.tsx": $icons_Sun,
