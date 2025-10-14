@@ -4,10 +4,7 @@
 - fix helepr functions to return object with data and build strings in markup instead
 - Make PWA manifest
 - Add a robots.txt
-- Fix bug where default order of data is rendered and then reload and localstroage order
 
-- Make feedback form component and hook it up with SMTP
-- Make feedback form ratelimiting and session UUID to block any over usage
 - Make login form and make it connect to backend db (Cloudflare D1?)
 - Make authentication middleware to protect admin page
 - Make basic total visitors data in DB 
@@ -16,3 +13,12 @@
         date,
         country,
     }
+
+    - Tip data in DB
+        {
+            id: UUID,
+            title: string,
+            tip: string,
+            weight: number between 0 and 24. This is what determins what daylight situation it is valid for
+            source: the source to the main study this tip is based on.
+        }

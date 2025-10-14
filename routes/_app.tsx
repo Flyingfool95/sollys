@@ -31,6 +31,10 @@ export default function App({ Component }: PageProps) {
         padding: var(--spacing-md);
     }
 
+    main {
+        padding-bottom: calc(var(--spacing-xl) * 2);
+    }
+
     footer {
         margin-top: auto;
         display: flex;
@@ -51,6 +55,16 @@ export default function App({ Component }: PageProps) {
     p {
         max-width: 75ch;
         line-height: 1.6;
+    }
+
+    a {
+        color: var(--color-primary-alt);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover{
+        text-decoration: underline;
     }
 
     img,
@@ -93,7 +107,7 @@ export default function App({ Component }: PageProps) {
 
     hr {
         color: var(--color-secondary-15);
-        margin: calc(var(--spacing-xl) * 2) 0;
+        margin: var(--spacing-xxl) 0;
     }
 
     .hidden {
@@ -161,7 +175,8 @@ export default function App({ Component }: PageProps) {
                 <link rel="stylesheet" href="/styles/islands/location-picker.css" />
                 <link rel="stylesheet" href="/styles/islands/dashboard.css" />
                 <link rel="stylesheet" href="/styles/islands/loader.css" />
-                <link rel="stylesheet" href="/styles/islands/modal.css" />
+                <link rel="stylesheet" href="/styles/islands/modal.css" />{" "}
+                <link rel="stylesheet" href="/styles/islands/tip.css" />
             </head>
             <body>
                 <Component />

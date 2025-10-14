@@ -8,10 +8,12 @@ import * as $_layout from "./routes/_layout.tsx";
 import * as $admin from "./routes/admin.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $login from "./routes/login.tsx";
+import * as $tips_index from "./routes/tips/index.tsx";
 import * as $Card from "./islands/Card.tsx";
 import * as $Dashboard from "./islands/Dashboard.tsx";
 import * as $HydrateClientState from "./islands/HydrateClientState.tsx";
 import * as $MyDatePicker from "./islands/MyDatePicker.tsx";
+import * as $Tip from "./islands/Tip.tsx";
 import * as $icons_Arrow from "./islands/icons/Arrow.tsx";
 import * as $icons_ClockTimeLeft from "./islands/icons/ClockTimeLeft.tsx";
 import * as $icons_Sun from "./islands/icons/Sun.tsx";
@@ -25,12 +27,14 @@ const manifest = {
     "./routes/admin.tsx": $admin,
     "./routes/index.tsx": $index,
     "./routes/login.tsx": $login,
+    "./routes/tips/index.tsx": $tips_index,
   },
   islands: {
     "./islands/Card.tsx": $Card,
     "./islands/Dashboard.tsx": $Dashboard,
     "./islands/HydrateClientState.tsx": $HydrateClientState,
     "./islands/MyDatePicker.tsx": $MyDatePicker,
+    "./islands/Tip.tsx": $Tip,
     "./islands/icons/Arrow.tsx": $icons_Arrow,
     "./islands/icons/ClockTimeLeft.tsx": $icons_ClockTimeLeft,
     "./islands/icons/Sun.tsx": $icons_Sun,

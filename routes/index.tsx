@@ -1,9 +1,8 @@
 import { Handlers } from "$fresh/server.ts";
-import Footer from "../components/footer/Footer.tsx";
-import Header from "../components/header/Header.tsx";
 import { normalizeCityName } from "../helpers/location.helpers.ts";
 import Dashboard from "../islands/Dashboard.tsx";
 import HydrateClientState from "../islands/HydrateClientState.tsx";
+import Tip from "../islands/Tip.tsx";
 import { coordinates, city } from "../signals/location.signals.ts";
 import { ServerData } from "../types/serverData.types.ts";
 
@@ -37,6 +36,8 @@ export default function Home({ data }: { data: ServerData }) {
         <>
             <HydrateClientState serverData={data} />
             <Dashboard />
+            <hr />
+            <Tip />
         </>
     );
 }
