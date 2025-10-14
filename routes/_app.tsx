@@ -12,12 +12,9 @@ export default function App({ Component }: PageProps) {
                     name="description"
                     content="See today’s sunrise, sunset, and how long the sun will shine in your location with the Sollys daylight app."
                 />
-                {/* Critical */}
-                <style dangerouslySetInnerHTML={{ __html: Deno.readTextFileSync("./styles/variables.css") }} />
-
-                <style dangerouslySetInnerHTML={{ __html: Deno.readTextFileSync("./styles/styles.css") }} />
                 {/* Global */}
-
+                <link rel="stylesheet" href="/styles/variables.css" />
+                <link rel="stylesheet" href="/styles/styles.css" />
                 <link rel="stylesheet" href="/fonts/fonts.css" />
                 {/* Components */}
                 <link rel="stylesheet" href="/styles/components/header.css" />
