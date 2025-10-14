@@ -12,5 +12,5 @@ export default function HydrateClientState({ serverData }: { serverData: ServerD
         city.value = serverData.locationData.city;
     }
 
-    return <></>;
+    return <span></span>;
 }
