@@ -13,19 +13,13 @@ export default function App({ Component }: PageProps) {
                     content="See today’s sunrise, sunset, and how long the sun will shine in your location with the Sollys daylight app."
                 />
                 {/* Global */}
-                <link rel="preload" href="/fonts/fonts.css" as="style" />
                 <link rel="stylesheet" href="/fonts/fonts.css" />
-                <link rel="preload" href="/styles/variables.css" as="style" />
                 <link rel="stylesheet" href="/styles/variables.css" />
-                <link rel="preload" href="/styles/styles.css" as="style" />
                 <link rel="stylesheet" href="/styles/styles.css" />
                 {/* Components */}
                 <link rel="stylesheet" href="/styles/components/header.css" />
-                <link rel="preload" href="/styles/components/footer.css" as="style" />
                 <link rel="stylesheet" href="/styles/components/footer.css" />
-                <link rel="preload" href="/styles/components/logo.css" as="style" />
                 <link rel="stylesheet" href="/styles/components/logo.css" />
-                <link rel="preload" href="/styles/components/feedback.css" as="style" />
                 <link rel="stylesheet" href="/styles/components/feedback.css" />
                 {/* Islands */}
                 <link rel="stylesheet" href="/styles/islands/date-picker.css" />
