@@ -1,13 +1,12 @@
 /* TODO */
+- Make it so that getrandomTip() doesnt run on each get request to avoid overuse on db. Somekind of caching, maybe generate a uuid for each device visited and use that to track if they have visited since midnight? or something
+
 //Pagespeed Insights related todos
 - Look at localstorage data UI flash (i.e Modal)
 - fix helepr functions to return object with data and build strings in markup instead
 - Make PWA manifest
 - Add a robots.txt
-- Fix bug where default order of data is rendered and then reload and localstroage order
 
-- Make feedback form component and hook it up with SMTP
-- Make feedback form ratelimiting and session UUID to block any over usage
 - Make login form and make it connect to backend db (Cloudflare D1?)
 - Make authentication middleware to protect admin page
 - Make basic total visitors data in DB 

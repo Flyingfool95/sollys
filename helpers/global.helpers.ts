@@ -114,3 +114,18 @@ export function persistentStorage<T>(key: string) {
         },
     };
 }
+
+//Calculate ms until midnight
+export function msUntilNextMidnight(): number {
+    const now = new Date();
+    const tomorrow = new Date(
+        now.getFullYear(),
+        now.getMonth(),
+        now.getDate() + 1, // next day
+        0,
+        0,
+        0,
+        0 // midnight
+    );
+    return tomorrow.getTime() - now.getTime();
+}

@@ -1,11 +1,10 @@
 import { Handlers } from "$fresh/server.ts";
-import Footer from "../components/footer/Footer.tsx";
-import Header from "../components/header/Header.tsx";
+import { getRandomTip } from "../helpers/database.helpers.ts";
 import { normalizeCityName } from "../helpers/location.helpers.ts";
-import Dashboard from "../islands/Dashboard.tsx";
-import HydrateClientState from "../islands/HydrateClientState.tsx";
-import { coordinates, city } from "../signals/location.signals.ts";
 import { ServerData } from "../types/serverData.types.ts";
+import HydrateClientState from "../islands/HydrateClientState.tsx";
+import Dashboard from "../islands/Dashboard.tsx";
+import Tip from "../islands/Tip.tsx";
 
 export const handler: Handlers = {
     async GET(_req, ctx) {
@@ -16,6 +15,9 @@ export const handler: Handlers = {
             `https://api.ipgeolocation.io/v2/ipgeo?apiKey=${Deno.env.get("IP_GEOLOCATION_API_KEY")}&ip=${ip}`
         ).then((r) => r.json());
 
+        //Get todays tip
+        const todaysTip = await getRandomTip();
+
         const res = await ctx.render({
             locationData: {
                 country: geo.location.country_name,
@@ -23,6 +25,7 @@ export const handler: Handlers = {
                 longitude: geo.location.longitude,
                 latitude: geo.location.latitude,
             },
+            todaysTip,
         });
 
         return res;
@@ -30,15 +33,12 @@ export const handler: Handlers = {
 };
 
 export default function Home({ data }: { data: ServerData }) {
-    coordinates.value = {
-        latitude: parseInt(data.locationData.latitude),
-        longitude: parseInt(data.locationData.longitude),
-    };
-    city.value = data.locationData.city;
     return (
         <>
             <HydrateClientState serverData={data} />
             <Dashboard />
+            <hr />
+            <Tip />
         </>
     );
 }
