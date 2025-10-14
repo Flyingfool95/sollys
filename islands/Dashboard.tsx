@@ -5,7 +5,7 @@ import { prioritizeSelectedItem } from "../helpers/dashboard.helpers.ts";
 import { persistentStorage } from "../helpers/global.helpers.ts";
 
 export default function Dashboard() {
-        const [dashDataArray, setDashDataArray] = useState([...dataArray.value]);
+    const [dashDataArray, setDashDataArray] = useState([...dataArray.value]);
     const selectedData = persistentStorage("selected-data");
     prioritizeSelectedItem(selectedData.get() as string, dashDataArray, setDashDataArray);
 
