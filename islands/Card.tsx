@@ -27,16 +27,13 @@ const handleKeyDown = (e: JSX.TargetedKeyboardEvent<HTMLDivElement>, array: Arra
 
 export default function Card({
     data,
-    isLoading,
     array,
     setArray,
 }: {
     data: { name: string; value: any };
-    isLoading: boolean;
     array: Array<any>;
     setArray: any;
 }) {
-    if (isLoading) return <CardLoader />;
     const Icon = iconMap[data.name] ?? null;
     const Text = textMap[data.name] ?? null;
 

@@ -22,7 +22,6 @@ export default function Dashboard() {
                 <Card
                     key={data.name}
                     data={data}
-                    isLoading={!data.value}
                     array={dashDataArray}
                     setArray={setDashDataArray}
                 />
