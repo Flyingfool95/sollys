@@ -150,9 +150,7 @@ export default function App({ Component }: PageProps) {
                 {/* Critical */}
                 <style dangerouslySetInnerHTML={{ __html: criticalCss }} />
                 {/* Global */}
-                <link rel="stylesheet" href="/styles/variables.css" />
                 <link rel="stylesheet" href="/fonts/fonts.css" />
-                <link rel="stylesheet" href="/styles/styles.css" />
                 {/* Components */}
                 <link rel="stylesheet" href="/styles/components/header.css" />
                 <link rel="stylesheet" href="/styles/components/footer.css" />
