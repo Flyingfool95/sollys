@@ -19,9 +19,6 @@ export default function index({ data }: { data: Tips }) {
                     <div>
                         <h2>{tip.title}</h2>
                         <p>{tip.tip}</p>
-                        <a href={tip.source} target="_blank" rel="noopener noreferrer">
-                            - Source
-                        </a>{" "}
                     </div>
                 ))}
         </div>
