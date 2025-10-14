@@ -36,13 +36,7 @@ export default function Home({ data }: { data: ServerData }) {
     return (
         <>
             <HydrateClientState serverData={data} />
-            <Header />
-            <main>
-                <Dashboard />
-                <hr />
-                {/* <Feedback /> */}
-            </main>
-            <Footer />
+            <Dashboard />
         </>
     );
 }
