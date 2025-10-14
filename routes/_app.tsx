@@ -13,9 +13,9 @@ export default function App({ Component }: PageProps) {
                     content="See today’s sunrise, sunset, and how long the sun will shine in your location with the Sollys daylight app."
                 />
                 {/* Global */}
-                <link rel="stylesheet" href="/fonts/fonts.css" />
                 <link rel="stylesheet" href="/styles/variables.css" />
                 <link rel="stylesheet" href="/styles/styles.css" />
+                <link rel="stylesheet" href="/fonts/fonts.css" />
                 {/* Components */}
                 <link rel="stylesheet" href="/styles/components/header.css" />
                 <link rel="stylesheet" href="/styles/components/footer.css" />
