@@ -10,6 +10,8 @@ import { ServerData } from "../types/serverData.types.ts";
 export const handler: Handlers = {
     async GET(_req, ctx) {
         const ip = ctx.remoteAddr?.hostname === "127.0.0.1" ? "213.89.109.82" : ctx.remoteAddr?.hostname;
+        console.log(ctx.remoteAddr);
+        console.log("IP: ", ip);
         const geo = await fetch(
             `https://api.ipgeolocation.io/v2/ipgeo?apiKey=${Deno.env.get("IP_GEOLOCATION_API_KEY")}&ip=${ip}`
         ).then((r) => r.json());
