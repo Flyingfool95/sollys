@@ -1,4 +1,6 @@
 /* TODO */
+- Make it so that getrandomTip() doesnt run on each get request to avoid overuse on db. Somekind of caching, maybe generate a uuid for each device visited and use that to track if they have visited since midnight? or something
+
 //Pagespeed Insights related todos
 - Look at localstorage data UI flash (i.e Modal)
 - fix helepr functions to return object with data and build strings in markup instead
@@ -13,12 +15,3 @@
         date,
         country,
     }
-
-    - Tip data in DB
-        {
-            id: UUID,
-            title: string,
-            tip: string,
-            weight: number between 0 and 24. This is what determins what daylight situation it is valid for
-            source: the source to the main study this tip is based on.
-        }

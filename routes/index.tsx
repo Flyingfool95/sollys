@@ -15,7 +15,6 @@ export const handler: Handlers = {
 
         //Get todays tip
         const todaysTip = await getRandomTip();
-        console.log(todaysTip);
 
         const res = await ctx.render({
             locationData: {

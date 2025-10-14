@@ -4,8 +4,6 @@ import { Tips } from "../../types/serverData.types.ts";
 
 export const handler: Handlers = {
     async GET(_req, ctx) {
-        console.log(tips);
-
         const res = await ctx.render(tips);
 
         return res;
