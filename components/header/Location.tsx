@@ -1,9 +1,5 @@
-import { LocationData } from "../../types/serverData.types.ts";
+import { city } from "../../signals/location.signals.ts";
 
-export default function MyLocationPicker({ locationData }: { locationData: LocationData }) {
-    return (
-        <div className="myLocationPicker">
-            {!locationData.city ? <div className="loader"></div> : <p>{locationData.city}</p>}
-        </div>
-    );
+export default function MyLocationPicker() {
+    return <div className="myLocationPicker">{!city ? <div className="loader"></div> : <p>{city}</p>}</div>;
 }

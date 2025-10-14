@@ -8,9 +8,8 @@ import * as $admin from "./routes/admin.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $login from "./routes/login.tsx";
 import * as $Card from "./islands/Card.tsx";
-import * as $ClearStorageButton from "./islands/ClearStorageButton.tsx";
 import * as $Dashboard from "./islands/Dashboard.tsx";
-import * as $Modal from "./islands/Modal.tsx";
+import * as $HydrateClientState from "./islands/HydrateClientState.tsx";
 import * as $MyDatePicker from "./islands/MyDatePicker.tsx";
 import * as $icons_Arrow from "./islands/icons/Arrow.tsx";
 import * as $icons_ClockTimeLeft from "./islands/icons/ClockTimeLeft.tsx";
@@ -27,9 +26,8 @@ const manifest = {
   },
   islands: {
     "./islands/Card.tsx": $Card,
-    "./islands/ClearStorageButton.tsx": $ClearStorageButton,
     "./islands/Dashboard.tsx": $Dashboard,
-    "./islands/Modal.tsx": $Modal,
+    "./islands/HydrateClientState.tsx": $HydrateClientState,
     "./islands/MyDatePicker.tsx": $MyDatePicker,
     "./islands/icons/Arrow.tsx": $icons_Arrow,
     "./islands/icons/ClockTimeLeft.tsx": $icons_ClockTimeLeft,

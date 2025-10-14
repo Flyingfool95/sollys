@@ -1,9 +1,10 @@
 import { Handlers } from "$fresh/server.ts";
-import Feedback from "../components/feedback/Feedback.tsx";
 import Footer from "../components/footer/Footer.tsx";
 import Header from "../components/header/Header.tsx";
 import { normalizeCityName } from "../helpers/location.helpers.ts";
 import Dashboard from "../islands/Dashboard.tsx";
+import HydrateClientState from "../islands/HydrateClientState.tsx";
+import { coordinates, city } from "../signals/location.signals.ts";
 import { ServerData } from "../types/serverData.types.ts";
 
 export const handler: Handlers = {
@@ -27,11 +28,17 @@ export const handler: Handlers = {
 };
 
 export default function Home({ data }: { data: ServerData }) {
+    coordinates.value = {
+        latitude: parseInt(data.locationData.latitude),
+        longitude: parseInt(data.locationData.longitude),
+    };
+    city.value = data.locationData.city;
     return (
         <>
-            <Header data={data} />
+            <HydrateClientState serverData={data} />
+            <Header />
             <main>
-                <Dashboard data={data}/>
+                <Dashboard />
                 <hr />
                 {/* <Feedback /> */}
             </main>

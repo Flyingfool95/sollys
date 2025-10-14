@@ -72,9 +72,9 @@ export function getDaylightHours(sunriseStr: string | null, sunsetStr: string | 
 
 // Get formatted sunrise/sunset time
 export function getSunEventTime(key: string, date: Date, coordinates: Coordinates | null) {
-    if (!coordinates?.lat || !coordinates?.lng) return null;
+    if (!coordinates?.latitude || !coordinates?.longitude) return null;
 
-    const times = suncalc.getTimes(date, coordinates.lat, coordinates.lng);
+    const times = suncalc.getTimes(date, coordinates.latitude, coordinates.longitude);
     const targetTime = times[key];
     if (!targetTime || isNaN(targetTime.getTime())) return null;
 
