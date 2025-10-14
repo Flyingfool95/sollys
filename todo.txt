@@ -1,5 +1,6 @@
 /* TODO */
 - Make it so that getrandomTip() doesnt run on each get request to avoid overuse on db. Somekind of caching, maybe generate a uuid for each device visited and use that to track if they have visited since midnight? or something
+- Make until next event refresh automatically
 
 //Pagespeed Insights related todos
 - Look at localstorage data UI flash (i.e Modal)
