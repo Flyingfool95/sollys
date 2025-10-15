@@ -3,6 +3,7 @@ import Arrow from "./icons/Arrow.tsx";
 import ClockTimeLeft from "./icons/ClockTimeLeft.tsx";
 import Sun from "./icons/Sun.tsx";
 import { prioritizeSelectedItem } from "../helpers/dashboard.helpers.ts";
+import { SunDataItem } from "../types/serverData.types.ts";
 
 const iconMap: Record<string, VNode> = {
     sunset: <Arrow />,
@@ -30,7 +31,7 @@ export default function Card({
     array,
     setArray,
 }: {
-    data: { name: string; value: any };
+    data: SunDataItem;
     array: Array<any>;
     setArray: any;
 }) {

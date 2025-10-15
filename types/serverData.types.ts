@@ -14,7 +14,8 @@ export type Tip = {
 };
 export type Tips = Array<Tip>;
 
-export type SunData = Array<{ name: string, value: string }>;
+export type SunDataItem = { name: string; value: string } | { name: string; value: { name: string; value: string } };
+export type SunData = Array<SunDataItem>;
 export type ServerData = {
     locationData: LocationData;
     todaysTip: Tip;
