@@ -13,7 +13,6 @@ export const handler: Handlers = {
             `https://api.ipgeolocation.io/v2/ipgeo?apiKey=${Deno.env.get("IP_GEOLOCATION_API_KEY")}&ip=${ip}`
         ).then((r) => r.json());
 
-        //Get todays tip
         const todaysTip = await getRandomTip();
 
         const res = await ctx.render({
