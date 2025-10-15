@@ -1,0 +1,27 @@
+:root {
+	--color-primary-1: oklch(98.4% 0.003 247.858);
+	--color-primary-1-transparent: oklch(98.4% 0.003 247.858, 0.5);
+	--color-primary-2: oklch(92.9% 0.013 255.508);
+	--color-primary-2-transparent: oklch(92.9% 0.013 255.508, 0.5);
+	--color-primary-3: oklch(70.4% 0.04 256.788);
+	--color-primary-3-transparent: oklch(70.4% 0.04 256.788, 0.5);
+	--color-primary-4: oklch(44.6% 0.043 257.281);
+	--color-primary-4-transparent: oklch(44.6% 0.043 257.281, 0.5);
+	--color-primary-5: oklch(27.9% 0.041 260.031);
+	--color-primary-5-transparent: oklch(27.9% 0.041 260.031, 0.5);
+	--color-primary-6: oklch(12.9% 0.042 264.695);
+	--color-primary-6-transparent: oklch(12.9% 0.042 264.695, 0.5);
+
+	--color-primary-1: oklch(98.4% 0.003 247.858);
+	--color-primary-1-transparent: oklch(98.4% 0.003 247.858, 0.5);
+	--color-primary-2: oklch(92.9% 0.013 255.508);
+	--color-primary-2-transparent: oklch(92.9% 0.013 255.508, 0.5);
+	--color-primary-3: oklch(70.4% 0.04 256.788);
+	--color-primary-3-transparent: oklch(70.4% 0.04 256.788, 0.5);
+	--color-primary-4: oklch(44.6% 0.043 257.281);
+	--color-primary-4-transparent: oklch(44.6% 0.043 257.281, 0.5);
+	--color-primary-5: oklch(27.9% 0.041 260.031);
+	--color-primary-5-transparent: oklch(27.9% 0.041 260.031, 0.5);
+	--color-primary-6: oklch(12.9% 0.042 264.695);
+	--color-primary-6-transparent: oklch(12.9% 0.042 264.695, 0.5);
+}

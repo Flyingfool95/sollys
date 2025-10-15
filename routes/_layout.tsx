@@ -1,10 +1,15 @@
+import Footer from "../components/Footer.tsx";
+import Header from "../components/Header.tsx";
 import { define } from "../utils.ts";
 
 export default define.layout(({ Component }) => {
 	return (
 		<>
-			<h1>Hello there...</h1>
-			<Component />
+			<Header />
+			<main>
+				<Component />
+			</main>
+			<Footer />
 		</>
 	);
 });
