@@ -1,5 +1,5 @@
 /* TODO */
-- Fix structure to allow for layout to recieve server data and pass it to components that need it
+- Fix server caching for fetches to optimize API and DB hits (make it a cache helper function)
 - Make until next event refresh automatically
 - Figure out caching on the server anonumously
 
