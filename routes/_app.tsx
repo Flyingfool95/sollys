@@ -9,7 +9,7 @@ export default define.page(function App({ Component }) {
 					name="viewport"
 					content="width=device-width, initial-scale=1.0"
 				/>
-				<title>Sollys - A little brighter everyday</title>
+				<title>Sollys - A little brighter every day</title>
 			</head>
 			<body>
 				<Component />

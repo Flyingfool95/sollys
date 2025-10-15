@@ -1,0 +1,16 @@
+html {
+	background: linear-gradient(var(--color-primary-5), var(--color-primary-6));
+	color: var(--color-primary-1);
+}
+
+body {
+	font-size: var(--font-size-2);
+	line-height: 1.5;
+	letter-spacing: 0.5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--color-secondary-3);
+	line-height: 1.2;
+	letter-spacing: 1px;
+}
