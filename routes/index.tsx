@@ -10,8 +10,9 @@ import { getSunData } from "../helpers/dashboard.helpers.ts";
 export const handler: Handlers = {
     async GET(_req, ctx) {
         const locationData = await getCoordinates(ctx);
-        const sunData = getSunData(locationData)
-        const todaysTip = await getRandomTip();
+        const sunData = getSunData(locationData);
+        const duration = sunData.filter((data) => data.name === "duration")[0].value as string;
+        const todaysTip = await getRandomTip(Number(duration?.slice(0,2)));
 
         const res = await ctx.render({
             locationData,
