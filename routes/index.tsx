@@ -1,11 +1,11 @@
 import { Handlers } from "$fresh/server.ts";
 import { getRandomTip } from "../helpers/database.helpers.ts";
 import { getCoordinates } from "../helpers/location.helpers.ts";
+import { getSunData } from "../helpers/dashboard.helpers.ts";
 import { ServerData } from "../types/serverData.types.ts";
 import HydrateClientState from "../islands/HydrateClientState.tsx";
 import Dashboard from "../islands/Dashboard.tsx";
 import Tip from "../islands/Tip.tsx";
-import { getSunData } from "../helpers/dashboard.helpers.ts";
 
 export const handler: Handlers = {
     async GET(_req, ctx) {
