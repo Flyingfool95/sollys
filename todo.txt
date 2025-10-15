@@ -1,15 +1,15 @@
 /* TODO */
-- Fix issue with City not rendering, undefined? await it error handeling
-- Make suncalc run serverside instead of in client
+- Fix structure to allow for layout to recieve server data and pass it to components that need it
 - Make until next event refresh automatically
+- Figure out caching on the server anonumously
 
 //Pagespeed Insights related todos
-- Look at localstorage data UI flash (i.e Modal)
 - fix helepr functions to return object with data and build strings in markup instead
 - Make PWA manifest
 - Add a robots.txt
 
-- Make login form and make it connect to backend db (Cloudflare D1?)
+//Future features
+- Make login form and make it connect to backend db (neon db)
 - Make authentication middleware to protect admin page
 - Make basic total visitors data in DB 
     {
