@@ -11,7 +11,7 @@ export const handler = define.handlers({
 export default define.page<typeof handler>(({ data }) => {
 	return (
 		<>
-			<p>Dashboard </p>
+			<p>Dashboard</p>
 			<hr />
 			<p>Todays tip</p>
 		</>
