@@ -71,8 +71,10 @@ INSERT INTO tips (title, tip, weight, source) VALUES
 `;
 }
 
+//All tips
 export const tips = await sql`SELECT * FROM tips`;
 
+//One random tip
 export async function getRandomTip(weight?: number) {
     if (weight !== undefined) {
         // Filter by weight
