@@ -80,7 +80,7 @@ export async function getRandomTip(weight?: number) {
         // Filter by weight
         const [tip] = await sql`
       SELECT * FROM tips
-      WHERE weight = ${weight}
+      WHERE weight <= ${weight}
       ORDER BY RANDOM()
       LIMIT 1
     `;
