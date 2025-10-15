@@ -1,15 +1,10 @@
-import { PageProps } from "$fresh/server.ts";
-import Footer from "../components/footer/Footer.tsx";
-import Header from "../components/header/Header.tsx";
+import { define } from "../utils.ts";
 
-export default function _layout({ Component }: PageProps) {
-    return (
-        <>
-            <Header />
-            <main>
-                <Component />
-            </main>
-            <Footer />
-        </>
-    );
-}
+export default define.layout(({ Component }) => {
+  return (
+    <>
+      <h1>Hello there...</h1>
+      <Component />
+    </>
+  );
+});
