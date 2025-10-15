@@ -11,11 +11,21 @@ body {
 
 	display: flex;
 	flex-direction: column;
-	gap: var(--spacing-7);
+	gap: var(--spacing-6);
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	gap: var(--spacing-6);
 }
 
 h1, h2, h3, h4, h5, h6 {
 	color: var(--color-secondary-3);
 	line-height: 1.2;
 	letter-spacing: 1px;
+}
+
+hr {
+	color: var(--color-primary-4);
 }
