@@ -12,7 +12,7 @@ export const handler: Handlers = {
         const locationData = await getCoordinates(ctx);
         const sunData = getSunData(locationData);
         const duration = sunData.filter((data) => data.name === "duration")[0].value as string;
-        const todaysTip = await getRandomTip(Number(duration?.slice(0,2)));
+        const todaysTip = await getRandomTip(Number(duration?.slice(0, 2)));
 
         const res = await ctx.render({
             locationData,
