@@ -1,6 +1,7 @@
 import suncalc from "npm:suncalc@1.9.0";
 import { Coordinates } from "../types/dashboard.types.ts";
 import { persistentStorage } from "./global.helpers.ts";
+import { LocationData, SunData } from "../types/serverData.types.ts";
 
 // Utility to parse "HH:MM" string to Date for a given reference date
 export function parseHHMMToDate(timeStr: string, referenceDate: Date = new Date()): Date | null {
@@ -82,7 +83,7 @@ export function getSunEventTime(key: string, date: Date, coordinates: Coordinate
 }
 
 //Setting selected element first in array
-export function prioritizeSelectedItem(clickedName: string, array: Array<any>, setArray: any) {
+export function prioritizeSelectedItem(clickedName: string, array: SunData, setArray: any) {
     const selectedData = persistentStorage("selected-data");
     const index = array.findIndex((item) => item.name === clickedName);
 
@@ -93,4 +94,27 @@ export function prioritizeSelectedItem(clickedName: string, array: Array<any>, s
 
     setArray([...after, ...before]);
     selectedData.set(clickedName, null);
+}
+
+//Gets sundata
+export function getSunData(locationData: LocationData) {
+    const coordinates = {
+        latitude: Number(locationData.latitude),
+        longitude: Number(locationData.longitude),
+    };
+
+    const sunrise = getSunEventTime("sunrise", new Date(), coordinates);
+
+    const sunset = getSunEventTime("sunset", new Date(), coordinates);
+
+    const duration = getDaylightHours(sunrise, sunset);
+
+    const nextEvent = getTimeUntilNextSunEvent(sunrise, sunset);
+
+    return [
+        { name: "sunrise", value: sunrise },
+        { name: "sunset", value: sunset },
+        { name: "duration", value: duration },
+        { name: "nextEvent", value: nextEvent },
+    ];
 }

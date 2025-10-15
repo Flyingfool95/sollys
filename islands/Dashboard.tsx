@@ -1,30 +1,18 @@
-import { useState, useEffect } from "preact/hooks";
-import { dataArray } from "../signals/dashboard.signals.ts";
+import { useState } from "preact/hooks";
 import Card from "./Card.tsx";
 import { prioritizeSelectedItem } from "../helpers/dashboard.helpers.ts";
 import { persistentStorage } from "../helpers/global.helpers.ts";
+import { SunData } from "../types/serverData.types.ts";
 
-export default function Dashboard() {
-    const [dashDataArray, setDashDataArray] = useState([...dataArray.value]);
+export default function Dashboard({ sunData }: { sunData: SunData }) {
+    const [dashDataArray, setDashDataArray] = useState(sunData);
     const selectedData = persistentStorage("selected-data");
     prioritizeSelectedItem(selectedData.get() as string, dashDataArray, setDashDataArray);
-
-    useEffect(() => {
-        const unsubscribe = dataArray.subscribe((newValue) => {
-            setDashDataArray([...newValue]);
-        });
-        return () => unsubscribe();
-    }, []);
 
     return (
         <div className="dashboard">
             {dashDataArray.map((data) => (
-                <Card
-                    key={data.name}
-                    data={data}
-                    array={dashDataArray}
-                    setArray={setDashDataArray}
-                />
+                <Card key={data.name} data={data} array={dashDataArray} setArray={setDashDataArray} />
             ))}
         </div>
     );

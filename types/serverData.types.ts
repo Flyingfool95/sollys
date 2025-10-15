@@ -13,7 +13,10 @@ export type Tip = {
     source: string;
 };
 export type Tips = Array<Tip>;
+
+export type SunData = Array<{ name: string, value: string }>;
 export type ServerData = {
     locationData: LocationData;
-    todaysTip: Tip,
+    todaysTip: Tip;
+    sunData: SunData;
 };
