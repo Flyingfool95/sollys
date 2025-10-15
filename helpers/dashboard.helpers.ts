@@ -96,7 +96,7 @@ export function prioritizeSelectedItem(clickedName: string, array: SunData, setA
     selectedData.set(clickedName, null);
 }
 
-//Gets sundata
+//Get sundata
 export function getSunData(locationData: LocationData) {
     const coordinates = {
         latitude: Number(locationData.latitude),
