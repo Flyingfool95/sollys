@@ -17,6 +17,11 @@ export default function Dashboard({ data }: {
 			hours: number;
 			minutes: number;
 		};
+		nextEvent: {
+			name: string;
+			hours: number;
+			minutes: number;
+		};
 	};
 }) {
 	console.log(data);
