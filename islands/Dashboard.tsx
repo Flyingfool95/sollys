@@ -22,7 +22,11 @@ export type DashboardData = {
 		minutes: number;
 		eventName: string;
 	};
-};
+	location: {
+		city: string;
+		country: string;
+	};
+} | undefined;
 
 export default function Dashboard({ data }: { data: DashboardData }) {
 	return <div>Dashboard</div>;
