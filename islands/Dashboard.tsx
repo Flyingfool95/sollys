@@ -25,6 +25,5 @@ export type DashboardData = {
 };
 
 export default function Dashboard({ data }: { data: DashboardData }) {
-	console.log(data);
 	return <div>Dashboard</div>;
 }
