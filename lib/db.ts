@@ -11,7 +11,7 @@ export async function initDatabase() {
 		description TEXT NOT NULL,
 		weight INT NOT NULL
 		)
-		`;
+	`;
 
 	const { count } = (await sql<
 		{ count: number }
@@ -23,6 +23,18 @@ export async function initDatabase() {
 			INSERT INTO tips2 (title, description, weight) VALUES
 			('Tip 1', 'Go out and get sunlight', 5),
 			('Tip 2', 'Go out and get moonlight', 4)
-			`;
+		`;
 	}
+
+	//IP Geolocation cache
+	await sql`
+	CREATE TABLE IF NOT EXISTS cache_ip_geolocation (
+		ip_hash TEXT PRIMARY KEY,
+ 		latitude DOUBLE PRECISION NOT NULL,
+		longitude DOUBLE PRECISION NOT NULL,
+		city TEXT,
+		country TEXT NOT NULL,
+		created_at TIMESTAMP DEFAULT NOW()
+		)
+	`;
 }

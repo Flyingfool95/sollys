@@ -20,10 +20,11 @@ export type DashboardData = {
 		name: string;
 		hours: number;
 		minutes: number;
+		eventName: string;
 	};
 };
 
 export default function Dashboard({ data }: { data: DashboardData }) {
 	console.log(data);
-	return <div>{data.sunrise.name}</div>;
+	return <div>Dashboard</div>;
 }

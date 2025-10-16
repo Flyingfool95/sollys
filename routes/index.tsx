@@ -1,10 +1,11 @@
-import Dashboard from "../islands/Dashboard.tsx";
+import { define } from "../utils.ts";
 import { sql } from "../lib/db.ts";
 import { sunData } from "../lib/helpers/sunData.helper.ts";
-import { define } from "../utils.ts";
+import Dashboard from "../islands/Dashboard.tsx";
 
 export const handler = define.handlers({
 	async GET(ctx) {
+		console.log(ctx)
 		const tips = await sql`SELECT * FROM tips2`;
 		return { data: { tips, sunData } };
 	},
